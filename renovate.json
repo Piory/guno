@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
+  "extends": [
     "config:recommended",
     ":timezone(Asia/Tokyo)"
   ],
@@ -8,8 +8,9 @@
     "renovate-bot"
   ],
   "schedule": [
-    "after 10pm and before 5am every weekend",
-    "every weekend"
+    "after 10pm every weekend",
+    "every weekend",
+    "before 5am every weekend"
   ],
   "automerge": true,
   "major": {
@@ -20,7 +21,11 @@
   "configMigration": true,
   "packageRules": [
     {
-      "matchPackageNames": ["react", "react-dom", "react-native"],
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "react-native"
+      ],
       "automerge": false
     }
   ]
