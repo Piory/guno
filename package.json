@@ -4,16 +4,22 @@
   "version": "0.0.0",
   "engines": {
     "node": "22.14.0",
-    "npm": "please_use_pnpm_instead",
+    "npm": "use pnpm please!",
+    "yarn": "use pnpm please!",
     "pnpm": "10.8.0"
   },
   "volta": {
     "node": "22.14.0",
-    "pnpm": "10.8.0"
+    "pnpm": "10.8.1"
   },
   "packageManager": "pnpm@10.8.0",
   "scripts": {
     "app": "pnpm -F \"app\"",
+    "shared": "pnpm -F \"shared\"",
+    "infrastructure": "pnpm -F \"infrastructure\"",
+    "presentation": "pnpm -F \"presentation\"",
+    "usecase": "pnpm -F \"usecase\"",
+    "domain": "pnpm -F \"domain\"",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
