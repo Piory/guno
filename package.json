@@ -2,11 +2,30 @@
   "name": "guno",
   "private": true,
   "version": "0.0.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+    "node": "22.14.0",
+    "npm": "please_use_pnpm_instead",
+    "pnpm": "10.8.0"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "volta": {
+    "node": "22.14.0",
+    "pnpm": "10.8.0"
+  },
+  "packageManager": "pnpm@10.8.0",
+  "scripts": {
+    "app": "pnpm -F \"app\"",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.14",
+    "eslint": "8.57.1",
+    "jest": "29.7.0",
+    "prettier": "3.5.3",
+    "turbo": "2.5.0",
+    "typescript": "5.8.3"
+  }
 }

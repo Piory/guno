@@ -1,0 +1,7 @@
+{
+  "pipeline": {
+    "build": {},
+    "dev": {},
+    "lint": {}
+  }
+}
