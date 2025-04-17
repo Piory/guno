@@ -27,6 +27,12 @@
         "react-native"
       ],
       "automerge": false
+    },
+    {
+      "groupName": "matagui",
+      "matchPackagePatterns": [
+        "^@matagui"
+      ]
     }
   ]
 }
