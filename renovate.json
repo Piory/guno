@@ -47,9 +47,10 @@
       ]
     },
     {
-      "groupName": "matagui",
+      "groupName": "tamagui",
       "matchPackageNames": [
-        "/^@matagui/"
+        "tamagui",
+        "/^@tamagui/"
       ]
     }
   ]
