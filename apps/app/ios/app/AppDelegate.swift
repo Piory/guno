@@ -1,48 +1,45 @@
-import UIKit
+import AppAuth
 import React
-import React_RCTAppDelegate
 import ReactAppDependencyProvider
+import React_RCTAppDelegate
+import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-  var window: UIWindow?
+class AppDelegate: RCTAppDelegate, RNAppAuthAuthorizationFlowManager {
+	public weak var authorizationFlowManagerDelegate: RNAppAuthAuthorizationFlowManagerDelegate?
 
-  var reactNativeDelegate: ReactNativeDelegate?
-  var reactNativeFactory: RCTReactNativeFactory?
+	override func application(
+		_ application: UIApplication,
+		didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+	) -> Bool {
+		self.moduleName = "app"
+		self.dependencyProvider = RCTAppDependencyProvider()
+		self.initialProps = [:]
+		return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+	}
 
-  func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
-  ) -> Bool {
-    let delegate = ReactNativeDelegate()
-    let factory = RCTReactNativeFactory(delegate: delegate)
-    delegate.dependencyProvider = RCTAppDependencyProvider()
+	override func sourceURL(for bridge: RCTBridge) -> URL? {
+		self.bundleURL()
+	}
 
-    reactNativeDelegate = delegate
-    reactNativeFactory = factory
+	override func bundleURL() -> URL? {
+		#if DEBUG
+			RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
+		#else
+			Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+		#endif
+	}
 
-    window = UIWindow(frame: UIScreen.main.bounds)
-
-    factory.startReactNative(
-      withModuleName: "app",
-      in: window,
-      launchOptions: launchOptions
-    )
-
-    return true
-  }
-}
-
-class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
-  override func sourceURL(for bridge: RCTBridge) -> URL? {
-    self.bundleURL()
-  }
-
-  override func bundleURL() -> URL? {
-#if DEBUG
-    RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
-#else
-    Bundle.main.url(forResource: "main", withExtension: "jsbundle")
-#endif
-  }
+	override func application(
+		_ app: UIApplication,
+		open url: URL,
+		options: [UIApplication.OpenURLOptionsKey: Any] = [:]
+	) -> Bool {
+		if let resumed = authorizationFlowManagerDelegate?.resumeExternalUserAgentFlow(with: url),
+			resumed
+		{
+			return true
+		}
+		return RCTLinkingManager.application(app, open: url, options: options)
+	}
 }

@@ -4,24 +4,24 @@
  *
  * @format
  */
-
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import React from 'react';
-import {ScrollView, StatusBar, StyleSheet, Text, useColorScheme,} from 'react-native';
+import { ScrollView, StatusBar, StyleSheet, Text, useColorScheme } from 'react-native';
 
-import {Colors,} from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-import {createTamagui, TamaguiProvider, View} from 'tamagui';
-import {defaultConfig} from '@tamagui/config/v4'; // for quick config install this
-import {TopScreen} from '@core/presentation';
+import { createTamagui, TamaguiProvider, View } from 'tamagui';
+import { defaultConfig } from '@tamagui/config/v4'; // for quick config install this
+import { TopScreen } from '@core/presentation';
+import './src/di';
 
-const config = createTamagui(defaultConfig)
+const config = createTamagui(defaultConfig);
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
+function Section({ children, title }: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -68,12 +68,9 @@ function App(): React.JSX.Element {
   return (
     <TamaguiProvider config={config}>
       <View style={backgroundStyle}>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
-        />
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor={backgroundStyle.backgroundColor} />
         <ScrollView style={backgroundStyle}>
-          <TopScreen/>
+          <TopScreen />
         </ScrollView>
       </View>
     </TamaguiProvider>

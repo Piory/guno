@@ -1,0 +1,9 @@
+APP_ENV=local
+APP_ID=app.guno.local
+APP_NAME=guno
+APP_DISPLAY_NAME=Ascelta
+GOOGLE_OAUTH_URL_SCHEME=com.googleusercontent.apps.890730106172-l2vdld0lpmje6tk0jr14atv3qdal4lde
+GOOGLE_OAUTH_CLIENT_ID=890730106172-l2vdld0lpmje6tk0jr14atv3qdal4lde.apps.googleusercontent.com
+GOOGLE_OAUTH_REDIRECT_URL=890730106172-l2vdld0lpmje6tk0jr14atv3qdal4lde.apps.googleusercontent.com
+DISCORD_OAUTH_CLIENT_ID=1316112421710204979
+OAUTH_REDIRECT_URL_PATH=auth/v1/callback
