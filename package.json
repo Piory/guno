@@ -27,6 +27,7 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "@types/jest": "29.5.14",
     "eslint": "9.25.0",
     "jest": "29.7.0",

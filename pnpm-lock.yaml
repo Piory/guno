@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@trivago/prettier-plugin-sort-imports':
+        specifier: 5.2.2
+        version: 5.2.2(prettier@3.5.3)
       '@types/jest':
         specifier: 29.5.14
         version: 29.5.14
@@ -2095,6 +2098,22 @@ packages:
   '@tamagui/z-index-stack@1.126.1':
     resolution: {integrity: sha512-OWfjS0sic7JijmmdP+/xtI+TSw2ej2oLfEsACzK7yrKBoEsUkXsGGPudQEGdCOGVuwH7K838PTdH7qylOFhlfQ==}
 
+  '@trivago/prettier-plugin-sort-imports@5.2.2':
+    resolution: {integrity: sha512-fYDQA9e6yTNmA13TLVSA+WMQRc5Bn/c0EUBditUHNfMMxN7M82c38b1kEggVE3pLpZ0FwkwJkUEKMiOi52JXFA==}
+    engines: {node: '>18.12'}
+    peerDependencies:
+      '@vue/compiler-sfc': 3.x
+      prettier: 2.x - 3.x
+      prettier-plugin-svelte: 3.x
+      svelte: 4.x || 5.x
+    peerDependenciesMeta:
+      '@vue/compiler-sfc':
+        optional: true
+      prettier-plugin-svelte:
+        optional: true
+      svelte:
+        optional: true
+
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
 
@@ -3419,6 +3438,9 @@ packages:
   iterator.prototype@1.1.5:
     resolution: {integrity: sha512-H0dkQoCa3b2VEeKQBOxFph+JAbcrQdE7KC0UkqwpLmv2EC4P41QXP+rqo9wYodACiG5/WM5s9oDApTU8utwj9g==}
     engines: {node: '>= 0.4'}
+
+  javascript-natural-sort@0.7.1:
+    resolution: {integrity: sha512-nO6jcEfZWQXDhOiBtG2KvKyEptz7RVbpGP4vTD2hLBdmNQSsCiicO2Ioinv6UI4y9ukqnBpy+XZ9H6uLNgJTlw==}
 
   jest-changed-files@29.7.0:
     resolution: {integrity: sha512-fEArFiwf1BpQ+4bXSprcDc3/x4HSzL4al2tozwVpDFpsxALjLYdyiIK4e5Vz66GQJIbXJ82+35PtysofptNX2w==}
@@ -8233,6 +8255,18 @@ snapshots:
 
   '@tamagui/z-index-stack@1.126.1': {}
 
+  '@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.5.3)':
+    dependencies:
+      '@babel/generator': 7.27.0
+      '@babel/parser': 7.27.0
+      '@babel/traverse': 7.27.0
+      '@babel/types': 7.27.0
+      javascript-natural-sort: 0.7.1
+      lodash: 4.17.21
+      prettier: 3.5.3
+    transitivePeerDependencies:
+      - supports-color
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.27.0
@@ -9797,6 +9831,8 @@ snapshots:
       get-proto: 1.0.1
       has-symbols: 1.1.0
       set-function-name: 2.0.2
+
+  javascript-natural-sort@0.7.1: {}
 
   jest-changed-files@29.7.0:
     dependencies:

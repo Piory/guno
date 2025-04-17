@@ -1,6 +1,6 @@
-import { AuthRepository } from '@core/domain';
 import { authorize } from 'react-native-app-auth';
 import { OAuthConfig } from '@core/shared';
+import { AuthRepository } from '@core/domain';
 
 export class AuthRepositoryImpl implements AuthRepository {
   signInWithApple = async () => {
