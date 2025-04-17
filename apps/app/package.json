@@ -9,7 +9,7 @@
     "pod-install": "cd ios && pod install --repo-update",
     "android": "react-native run-android --port 3000",
     "ios": "ENVFILE=./env/.env react-native run-ios --port 3000 --device \"Piory iPhone\"",
-    "ios:dev": "ENVFILE=./env/.env.dev react-native run-ios --port 3000 --device \"Piory iPhone\"",
+    "ios:dev": "ENVFILE=./env/.env.development react-native run-ios --port 3000 --device \"Piory iPhone\"",
     "lint": "eslint .",
     "start": "react-native start --port 3000",
     "test": "jest"

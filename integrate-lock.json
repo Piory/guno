@@ -1,0 +1,29 @@
+{
+  "lockfileVersion": 1,
+  "packages": {
+    "@types/jest": {
+      "version": "29.5.14",
+      "integrated": false
+    },
+    "eslint": {
+      "version": "9.24.0",
+      "integrated": false
+    },
+    "jest": {
+      "version": "29.7.0",
+      "integrated": false
+    },
+    "prettier": {
+      "version": "3.5.3",
+      "integrated": false
+    },
+    "turbo": {
+      "version": "2.5.0",
+      "integrated": false
+    },
+    "typescript": {
+      "version": "5.8.3",
+      "integrated": false
+    }
+  }
+}
