@@ -1,7 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":timezone(Asia/Tokyo)"],
-  "labels": ["renovate-bot"],
+  "extends": [
+    "config:recommended",
+    ":timezone(Asia/Tokyo)"
+  ],
+  "labels": [
+    "renovate-bot"
+  ],
   "schedule": [
     "after 10pm every weekend",
     "every weekend",
@@ -13,15 +18,39 @@
   },
   "prHourlyLimit": 10,
   "prConcurrentLimit": 10,
-  "configMigration": true,
   "packageRules": [
     {
-      "matchPackageNames": ["react", "react-dom", "react-native"],
+      "groupName": "Jest",
+      "matchPackageNames": [
+        "jest",
+        "@types/jest"
+      ]
+    },
+    {
+      "groupName": "React Native",
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "react-test-renderer",
+        "react-native",
+        "/^@react-native/",
+        "@types/react",
+        "@types/react-test-renderer"
+      ],
       "automerge": false
     },
     {
+      "groupName": "Babel",
+      "matchPackageNames": [
+        "/^babel/",
+        "/^@babel/"
+      ]
+    },
+    {
       "groupName": "matagui",
-      "matchPackageNames": ["/^@matagui/"]
+      "matchPackageNames": [
+        "/^@matagui/"
+      ]
     }
   ]
 }
