@@ -2,7 +2,8 @@
   "name": "@core/infrastructure",
   "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "jest"
   },
   "dependencies": {
     "@core/domain": "workspace:*",

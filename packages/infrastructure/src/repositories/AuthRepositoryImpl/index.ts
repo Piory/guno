@@ -3,37 +3,27 @@ import { OAuthConfig } from '@core/shared';
 import { AuthRepository } from '@core/domain';
 
 export class AuthRepositoryImpl implements AuthRepository {
-  signInWithApple = async () => {
+  async signInWithApple(): Promise<void> {
     // Implementation for signing in with Apple
-  };
+  }
 
-  signInWithGoogle = async () => {
-    try {
-      const authState = await authorize(OAuthConfig.GOOGLE);
-      console.log(authState);
-    } catch (e) {
-      console.error(e);
-    }
-  };
+  async signInWithGoogle(): Promise<void> {
+    await authorize(OAuthConfig.GOOGLE);
+  }
 
-  signInWithX = async () => {
+  async signInWithX(): Promise<void> {
     // Implementation for signing in with X
-  };
+  }
 
-  signInWithTwitch = async () => {
+  async signInWithTwitch(): Promise<void> {
     // Implementation for signing in with Twitch
-  };
+  }
 
-  signInWithDiscord = async () => {
-    try {
-      const authState = await authorize(OAuthConfig.DISCORD);
-      console.log(authState);
-    } catch (e) {
-      console.error(e);
-    }
-  };
+  async signInWithDiscord(): Promise<void> {
+    await authorize(OAuthConfig.DISCORD);
+  }
 
-  signOut = async () => {
+  async signOut(): Promise<void> {
     // Implementation for signing out
-  };
+  }
 }
