@@ -1,5 +1,5 @@
-import { AuthRepository } from '@core/domain';
+import { DIContainer, DI_TYPES } from '@core/shared';
 import { AuthRepositoryImpl } from '@core/infrastructure';
-import { DI_TYPES, DIContainer } from '@core/shared';
+import { AuthRepository } from '@core/domain';
 
 DIContainer.register<AuthRepository>(DI_TYPES.AuthRepository, AuthRepositoryImpl);
