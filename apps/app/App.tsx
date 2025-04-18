@@ -7,11 +7,10 @@
 import type { PropsWithChildren } from 'react';
 import React from 'react';
 import { ScrollView, StatusBar, StyleSheet, Text, useColorScheme } from 'react-native';
-
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-
-import { createTamagui, TamaguiProvider, View } from 'tamagui';
-import { defaultConfig } from '@tamagui/config/v4'; // for quick config install this
+import { defaultConfig } from '@tamagui/config/v4';
+import { TamaguiProvider, View, createTamagui } from 'tamagui';
+// for quick config install this
 import { TopScreen } from '@core/presentation';
 import './src/di';
 

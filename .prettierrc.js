@@ -1,5 +1,6 @@
 module.exports = {
   plugins: ['@trivago/prettier-plugin-sort-imports'],
+  parser: 'babel-ts',
   arrowParens: 'avoid',
   bracketSameLine: true,
   bracketSpacing: true,

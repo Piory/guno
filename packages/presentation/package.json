@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "@core/domain": "workspace:*",
-    "@core/usecase": "workspace:*",
     "@core/shared": "workspace:*",
+    "@core/usecase": "workspace:*",
     "tamagui": "1.125.34"
   },
   "devDependencies": {
