@@ -6,8 +6,10 @@
     "test": "jest"
   },
   "dependencies": {
-    "react-native-app-auth": "8.0.2",
-    "react-native-config": "1.5.5",
     "tsyringe": "4.10.0"
+  },
+  "peerDependencies": {
+    "react-native-app-auth": "8.0.2",
+    "react-native-config": "1.5.5"
   }
 }
