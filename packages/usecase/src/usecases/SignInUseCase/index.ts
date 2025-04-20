@@ -1,6 +1,6 @@
-import * as domain from '@core/domain';
 import { inject, singleton } from 'tsyringe';
 import { DI_TYPES } from '@core/shared';
+import * as domain from '@core/domain';
 
 @singleton()
 export class SignInUseCase {

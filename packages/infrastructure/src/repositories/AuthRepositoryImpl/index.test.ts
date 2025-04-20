@@ -24,8 +24,8 @@ jest.mock('@core/shared', () => ({
   },
 }));
 
-import { OAuthConfig } from '@core/shared';
-import { AuthRepositoryImpl } from './index.ts';
+const AuthRepositoryImpl = require('./index.ts').AuthRepositoryImpl;
+const OAuthConfig = require('@core/shared').OAuthConfig;
 
 describe('AuthRepositoryImpl', () => {
   const repository = new AuthRepositoryImpl();

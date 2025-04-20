@@ -10,19 +10,19 @@ export function Title(): React.JSX.Element {
   return (
     <SafeAreaView>
       <View>
-        <YStack alignItems="center">
+        <YStack alignItems='center'>
           <Image height={140} width={140} source={require('./../../../../../../../apps/app/assets/icons/app_icon.png')} />
           <Text>Ascelta</Text>
         </YStack>
-        <YStack alignItems="center" gap="$6">
-          <Avatar circular size="$10">
-            <Avatar.Image accessibilityLabel="Cam" src="https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80" />
-            <Avatar.Fallback backgroundColor="$blue10" />
+        <YStack alignItems='center' gap='$6'>
+          <Avatar circular size='$10'>
+            <Avatar.Image accessibilityLabel='Cam' src='https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80' />
+            <Avatar.Fallback backgroundColor='$blue10' />
           </Avatar>
 
-          <Avatar circular size="$8">
-            <Avatar.Image accessibilityLabel="Nate Wienert" src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?&w=100&h=100&dpr=2&q=80" />
-            <Avatar.Fallback delayMs={600} backgroundColor="$blue10" />
+          <Avatar circular size='$8'>
+            <Avatar.Image accessibilityLabel='Nate Wienert' src='https://images.unsplash.com/photo-1531384441138-2736e62e0919?&w=100&h=100&dpr=2&q=80' />
+            <Avatar.Fallback delayMs={600} backgroundColor='$blue10' />
           </Avatar>
           <Button onPress={() => DIContainer.resolve(SignInUseCase).execute('google')}>{t('CONTINUE_WITH_GOOGLE')}</Button>
           <Button onPress={() => DIContainer.resolve(SignInUseCase).execute('discord')}>{t('CONTINUE_WITH_DISCORD')}</Button>

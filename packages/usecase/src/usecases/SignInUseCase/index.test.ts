@@ -1,5 +1,5 @@
-import { SignInUseCase } from './index.ts';
 import { AuthRepository } from '@core/domain';
+import { SignInUseCase } from './index.ts';
 
 describe('SignInUseCase', () => {
   const signInWithAppleMock = jest.fn();
