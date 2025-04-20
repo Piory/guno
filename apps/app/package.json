@@ -25,6 +25,7 @@
     "react-native": "0.78.2",
     "react-native-app-auth": "8.0.2",
     "react-native-config": "1.5.5",
+    "react-native-localize": "3.4.1",
     "reflect-metadata": "0.2.2",
     "tamagui": "1.126.1"
   },

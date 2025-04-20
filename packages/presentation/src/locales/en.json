@@ -1,0 +1,127 @@
+{
+  "you": "You",
+  "required": "Required",
+  "confirm": "Confirm",
+  "takePhoto": "Take a photo",
+  "selectFromLibrary": "Select from library",
+  "deleteImage": "Delete image",
+  "edit": "Edit",
+  "editProfile": "Edit profile",
+  "editDisplayName": "Edit display name",
+  "editDisplayNameLength": "Display name must be between {min} and {max} characters.",
+  "@editDisplayNameLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "editScreenName": "Edit handle",
+  "editScreenNameRegexp": "Handle can only contain alphanumeric characters and underscores (_).",
+  "editScreenNameRegexpError": "Contains invalid characters.",
+  "editScreenNameLength": "Handle must be between {min} and {max} characters.",
+  "@editScreenNameLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "editScreenNameExistenceError": "This handle is already in use.",
+  "editSelfIntroduction": "Edit self-introduction",
+  "editSelfIntroductionLength": "Self-introduction must be within {max} characters.",
+  "@editSelfIntroductionLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "updateUserProfileError": "Failed to update profile.",
+  "share": "Share",
+  "post": "Post",
+  "posts": "Posts",
+  "repost": "Repost",
+  "reposted": "{displayName} reposted",
+  "@reposted": {
+    "placeholders": {
+      "displayName": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteRepost": "Quote and repost",
+  "postedAt": "",
+  "postHintText": "How have you been lately?",
+  "postRequiredError": "Please enter the post content.",
+  "postListEmpty": "No posts yet",
+  "favoritePostListEmpty": "No favorite posts",
+  "displayName": "Display name",
+  "screenName": "Handle",
+  "selfIntroduction": "Self-introduction",
+  "favorite": "Favorite",
+  "favorites": "Favorites",
+  "cancel": "Cancel",
+  "done": "Done",
+  "save": "Save",
+  "ok": "OK",
+  "doContinue": "Continue",
+  "or": "Or",
+  "signInTitle": "Log in to make the most of Gynx!",
+  "signInDescription": "Please log in with one of the following services to continue",
+  "signUpOrSignIn": "Sign up or log in",
+  "continueWithApple": "Continue with Apple",
+  "CONTINUE_WITH_GOOGLE": "Continue with Google",
+  "continueWithX": "Continue with X",
+  "continueWithTwitch": "Continue with Twitch",
+  "CONTINUE_WITH_DISCORD": "Continue with Discord",
+  "continueAsGuest": "Continue as a guest user",
+  "continueAsGuestWarning": "Guest users have limited functionality, but restrictions will be lifted after linking an account",
+  "guestSignInAlertTitle": "Guest User Notice",
+  "guestSignInAlertMessage": "・Some features will be limited. You can lift restrictions by linking your account from the Profile > Settings page.\n・Once you log out, you cannot log in again.\n・Accounts that have not been used for more than 90 days as a guest user will be deleted.\n\nDo you want to continue as a guest user?",
+  "continueIsApproveTermsOfServiceAndPrivacyPolicy": "By continuing, you agree to Gynx's Terms of Service and Privacy Policy.",
+  "signIn": "Log in",
+  "signInError": "Failed to log in",
+  "signOut": "Log out",
+  "signOutMessage": "Are you sure you want to log out?",
+  "signOutError": "Failed to log out",
+  "email": "Email address",
+  "password": "Password",
+  "forgotYourPassword": "Forgot your password?",
+  "dontHaveAnAccount": "Don't have an account?",
+  "alreadyHaveAnAccount": "Already have an account?",
+  "follow": "{follow} Followers",
+  "@follow": {
+    "placeholders": {
+      "follow": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "follower": "{follower} Followers",
+  "@follower": {
+    "placeholders": {
+      "follower": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "uploadVideoTooLongErrorTitle": "Video is too long",
+  "uploadVideoTooLongErrorMessage": "Please upload the video within {max} seconds.",
+  "@uploadVideoTooLongErrorMessage": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "setting": "Settings"
+}

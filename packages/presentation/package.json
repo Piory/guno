@@ -14,6 +14,8 @@
     "@tamagui/themes": "1.126.1",
     "@tamagui/toast": "1.126.1",
     "burnt": "0.13.0",
+    "i18next": "25.0.0",
+    "react-i18next": "15.4.1",
     "react-native-svg": "15.11.2"
   },
   "peerDependencies": {
@@ -27,6 +29,7 @@
     "react": "19.1.0",
     "react-native": "0.78.2",
     "react-native-app-auth": "8.0.2",
+    "react-native-localize": "3.4.1",
     "react-test-renderer": "19.1.0",
     "tamagui": "1.126.1"
   }

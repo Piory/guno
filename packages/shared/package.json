@@ -9,6 +9,8 @@
     "tsyringe": "4.10.0"
   },
   "peerDependencies": {
+    "@core/domain": "workspace:*",
+    "@core/infrastructure": "workspace:*",
     "react-native-app-auth": "8.0.2",
     "react-native-config": "1.5.5"
   }

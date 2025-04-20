@@ -1,0 +1,127 @@
+{
+  "you": "あなた",
+  "required": "必須",
+  "confirm": "確認",
+  "takePhoto": "写真を撮る",
+  "selectFromLibrary": "ライブラリから選択",
+  "deleteImage": "画像を削除",
+  "edit": "編集",
+  "editProfile": "プロフィールを編集",
+  "editDisplayName": "表示名を編集",
+  "editDisplayNameLength": "表示名は、{min}文字以上{max}文字以内で入力してください。",
+  "@editDisplayNameLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "editScreenName": "ハンドルを編集",
+  "editScreenNameRegexp": "ハンドルには、半角英数字、アンダースコア（_）のみが利用できます。",
+  "editScreenNameRegexpError": "使用できない文字が含まれています。",
+  "editScreenNameLength": "ハンドルは、{min}文字以上{max}文字以内で入力してください。",
+  "@editScreenNameLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "editScreenNameExistenceError": "この ハンドル は既に使用されています。",
+  "editSelfIntroduction": "自己紹介を編集",
+  "editSelfIntroductionLength": "自己紹介は、{max}文字以内で入力してください。",
+  "@editSelfIntroductionLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "updateUserProfileError": "プロフィールの更新に失敗しました。",
+  "share": "共有",
+  "post": "投稿",
+  "posts": "投稿",
+  "repost": "リポスト",
+  "reposted": "{displayName}さんがリポストしました",
+  "@reposted": {
+    "placeholders": {
+      "displayName": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteRepost": "引用してリポスト",
+  "postedAt": "",
+  "postHintText": "最近どうしてる？",
+  "postRequiredError": "投稿内容を入力してください。",
+  "postListEmpty": "まだ投稿がありません",
+  "favoritePostListEmpty": "お気に入りの投稿がありません",
+  "displayName": "表示名",
+  "screenName": "ハンドル",
+  "selfIntroduction": "自己紹介",
+  "favorite": "お気に入り",
+  "favorites": "お気に入り",
+  "cancel": "キャンセル",
+  "done": "完了",
+  "save": "保存",
+  "ok": "OK",
+  "doContinue": "続ける",
+  "or": "または",
+  "signInTitle": "ログインして、Gynxを最大限に活用しよう！",
+  "signInDescription": "続行するには、以下のサービスでログインしてください",
+  "signUpOrSignIn": "新規登録またはログイン",
+  "continueWithApple": "Apple で続ける",
+  "CONTINUE_WITH_GOOGLE": "Google で続ける",
+  "continueWithX": "X で続ける",
+  "continueWithTwitch": "Twitch で続ける",
+  "CONTINUE_WITH_DISCORD": "Discord で続ける",
+  "continueAsGuest": "ゲストユーザーで続ける",
+  "continueAsGuestWarning": "ゲストユーザーは機能が制限されますが、アカウント連携後に制限は解除されます",
+  "guestSignInAlertTitle": "ゲストユーザーの注意事項",
+  "guestSignInAlertMessage": "・一部機能が制限されます。プロフィール > 設定ページからアカウント連携をすることで、制限を解除できます。\n・一度ログアウトすると再度ログインは行えません。\n・ゲストユーザーの状態で、90日以上使用していない状態のアカウントは削除されます。\n\nゲストユーザーで続行しますか？",
+  "continueIsApproveTermsOfServiceAndPrivacyPolicy": "続行することで、Gynx の利用規約およびプライバシーポリシーに同意するものとします。",
+  "signIn": "ログイン",
+  "signInError": "ログインに失敗しました",
+  "signOut": "ログアウト",
+  "signOutMessage": "本当にログアウトしますか？",
+  "signOutError": "ログアウトに失敗しました",
+  "email": "メールアドレス",
+  "password": "パスワード",
+  "forgotYourPassword": "パスワードをお忘れですか？",
+  "dontHaveAnAccount": "アカウントをお持ちでないですか？",
+  "alreadyHaveAnAccount": "すでにアカウントをお持ちですか？",
+  "follow": "{follow} フォロー",
+  "@follow": {
+    "placeholders": {
+      "follow": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "follower": "{follower} フォロワー",
+  "@follower": {
+    "placeholders": {
+      "follower": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "uploadVideoTooLongErrorTitle": "動画の長さが長すぎます",
+  "uploadVideoTooLongErrorMessage": "動画の長さは、{max}秒以内でアップロードしてください。",
+  "@uploadVideoTooLongErrorMessage": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "setting": "設定"
+}

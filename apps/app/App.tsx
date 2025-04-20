@@ -10,9 +10,7 @@ import { ScrollView, StatusBar, StyleSheet, Text, useColorScheme } from 'react-n
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { defaultConfig } from '@tamagui/config/v4';
 import { TamaguiProvider, View, createTamagui } from 'tamagui';
-// for quick config install this
-import { TopScreen } from '@core/presentation';
-import './src/di';
+import { Title } from '@core/presentation';
 
 const config = createTamagui(defaultConfig);
 
@@ -69,7 +67,7 @@ function App(): React.JSX.Element {
       <View style={backgroundStyle}>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor={backgroundStyle.backgroundColor} />
         <ScrollView style={backgroundStyle}>
-          <TopScreen />
+          <Title />
         </ScrollView>
       </View>
     </TamaguiProvider>
