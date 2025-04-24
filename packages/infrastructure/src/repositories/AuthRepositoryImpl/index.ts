@@ -12,7 +12,7 @@ export class AuthRepositoryImpl implements AuthRepository {
   }
 
   async signInWithX(): Promise<void> {
-    // Implementation for signing in with X
+    await authorize(OAuthConfig.X);
   }
 
   async signInWithTwitch(): Promise<void> {

@@ -6,6 +6,7 @@ declare module 'react-native-config' {
     APP_DISPLAY_NAME: string;
     GOOGLE_OAUTH_URL_SCHEME: string;
     GOOGLE_OAUTH_CLIENT_ID: string;
+    X_OAUTH_CLIENT_ID: string;
     DISCORD_OAUTH_CLIENT_ID: string;
     OAUTH_REDIRECT_URL_PATH: string;
   }

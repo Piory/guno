@@ -6,11 +6,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@core/domain": "workspace:*",
+    "@core/shared": "workspace:*",
     "tsyringe": "4.10.0"
   },
   "peerDependencies": {
-    "@core/domain": "workspace:*",
-    "@core/shared": "workspace:*",
     "react-native-app-auth": "8.0.2"
   }
 }

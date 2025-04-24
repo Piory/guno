@@ -9,11 +9,11 @@
     "tsyringe": "4.10.0"
   },
   "devDependencies": {
+    "@core/domain": "workspace:*",
+    "@core/shared": "workspace:*",
     "reflect-metadata": "0.2.2"
   },
   "peerDependencies": {
-    "@core/domain": "workspace:*",
-    "@core/shared": "workspace:*",
     "react-native-app-auth": "8.0.2"
   }
 }

@@ -1,6 +1,5 @@
 const authorizeMock = jest.fn();
 jest.mock('react-native-app-auth', () => ({
-  // authorize を jest.fn() に置き換え
   authorize: authorizeMock,
 }));
 jest.mock('@core/shared', () => ({
@@ -10,6 +9,17 @@ jest.mock('@core/shared', () => ({
       clientId: 'google_client_id',
       redirectUrl: 'google_redirect_url',
       scopes: ['openid', 'profile'],
+    },
+    X: {
+      issuer: 'https://x.com',
+      clientId: 'x_client_id',
+      redirectUrl: 'x_redirect_url',
+      scopes: ['openid', 'profile'],
+      serviceConfiguration: {
+        authorizationEndpoint: 'https://x.com/i/oauth2/authorize',
+        tokenEndpoint: 'https://api.x.com/2/oauth2/token',
+        revocationEndpoint: 'https://api.x.com/2/oauth2/revoke',
+      },
     },
     DISCORD: {
       issuer: 'https://discord.com',
@@ -39,6 +49,15 @@ describe('AuthRepositoryImpl', () => {
       it(`react-native-app-auth の #authorize に ${OAuthConfig.GOOGLE} が渡されていること`, async () => {
         await repository.signInWithGoogle();
         expect(authorizeMock).toHaveBeenCalledWith(OAuthConfig.GOOGLE);
+      });
+    });
+  });
+
+  describe('#signInWithX', () => {
+    describe('正常系', () => {
+      it(`react-native-app-auth の #authorize に ${OAuthConfig.X} が渡されていること`, async () => {
+        await repository.signInWithX();
+        expect(authorizeMock).toHaveBeenCalledWith(OAuthConfig.X);
       });
     });
   });

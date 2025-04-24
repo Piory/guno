@@ -1,6 +1,8 @@
 import { AuthRepository } from '@core/domain';
 import { SignInUseCase } from './index.ts';
 
+jest.mock('react-native-app-auth', () => ({}));
+
 describe('SignInUseCase', () => {
   const signInWithAppleMock = jest.fn();
   const signInWithGoogleMock = jest.fn();
