@@ -20,13 +20,13 @@
     "@core/presentation": "workspace:*",
     "@core/shared": "workspace:*",
     "@core/usecase": "workspace:*",
-    "@tamagui/config": "1.126.1",
+    "@tamagui/config": "1.126.2",
     "react": "19.1.0",
     "react-native": "0.78.2",
     "react-native-app-auth": "8.0.2",
     "react-native-config": "1.5.5",
     "reflect-metadata": "0.2.2",
-    "tamagui": "1.126.1"
+    "tamagui": "1.126.2"
   },
   "devDependencies": {
     "@babel/core": "7.26.10",
