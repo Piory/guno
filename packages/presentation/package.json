@@ -20,7 +20,7 @@
     "burnt": "0.13.0",
     "i18next": "25.0.1",
     "react": "19.1.0",
-    "react-i18next": "15.4.1",
+    "react-i18next": "15.5.1",
     "tamagui": "1.126.3"
   },
   "devDependencies": {
