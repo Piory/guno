@@ -1,0 +1,30 @@
+{
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@app/*": [
+        "packages/apps/app/src/*"
+      ],
+      "@core/shared/*": [
+        "packages/core/shared/src/*"
+      ],
+      "@core/infrastructure/*": [
+        "packages/core/infrastructure/src/*"
+      ],
+      "@core/presentation/*": [
+        "packages/core/presentation/src/*"
+      ],
+      "@core/usecase/*": [
+        "packages/core/usecase/src/*"
+      ],
+      "@core/domain/*": [
+        "packages/core/domain/src/*"
+      ]
+    }
+  }
+}
