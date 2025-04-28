@@ -6,13 +6,13 @@
     "node": "22.14.0",
     "npm": "use pnpm please!",
     "yarn": "use pnpm please!",
-    "pnpm": "10.8.1"
+    "pnpm": "10.10.0"
   },
   "volta": {
     "node": "22.14.0",
-    "pnpm": "10.8.1"
+    "pnpm": "10.10.0"
   },
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.10.0",
   "scripts": {
     "app": "pnpm -F \"app\"",
     "shared": "pnpm -F \"shared\"",
