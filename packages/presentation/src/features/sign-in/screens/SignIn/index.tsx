@@ -4,23 +4,23 @@ import { Separator, Spacer, Text, XStack, YStack } from 'tamagui';
 import { AppConfig } from '@core/shared';
 import Logo from '../../../../../assets/svgs/logo.svg';
 import Name from '../../../../../assets/svgs/name.svg';
-import { SignInWithAppleButton, SignInWithDiscordButton, SignInWithGoogleButton, SignInWithGuestButton, SignInWithXButton } from '../../components/elements/buttons';
+import { SignInWithAppleButton, SignInWithGoogleButton, SignInWithGuestButton } from '../../components/elements/buttons';
 
 export const SignIn: React.FunctionComponent = () => {
   const { t } = useTranslation();
   return (
     <>
       <YStack alignItems='center' justifyContent='center' height='100%' width='100%'>
-        <YStack paddingBottom='$6' alignItems='center'>
+        <YStack paddingBottom='$10' alignItems='center'>
           <Logo width={96} height={96} />
-          <Spacer size='$2' />
+          <Spacer size='$4' />
           <Name width={160} height={40} />
         </YStack>
         <YStack gap='$4' paddingHorizontal='$5' paddingVertical='$2'>
           <SignInWithAppleButton />
           <SignInWithGoogleButton />
-          <SignInWithXButton />
-          <SignInWithDiscordButton />
+          {/*<SignInWithXButton />*/}
+          {/*<SignInWithDiscordButton />*/}
           <XStack gap='$4' alignItems='center'>
             <Separator />
             <Text color='$colorMuted'>{t('OR')}</Text>

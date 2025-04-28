@@ -1,15 +1,9 @@
-import { inject, singleton } from 'tsyringe';
-import { DI_TYPES } from '@core/shared';
 import * as domain from '@core/domain';
 
-@singleton()
 export class SignInUseCase {
-  constructor(
-    @inject(DI_TYPES.AuthRepository)
-    private readonly authRepository: domain.AuthRepository,
-  ) {}
+  constructor(private readonly authRepository: domain.AuthRepository) {}
 
-  async execute(type: 'apple' | 'google' | 'x' | 'twitch' | 'discord'): Promise<void> {
+  async execute(type: 'apple' | 'google' | 'x' | 'twitch' | 'discord' | 'anonymous'): Promise<void> {
     switch (type) {
       case 'apple':
         await this.authRepository.signInWithApple();
@@ -25,6 +19,9 @@ export class SignInUseCase {
         break;
       case 'discord':
         await this.authRepository.signInWithDiscord();
+        break;
+      case 'anonymous':
+        await this.authRepository.signInWithAnonymous();
         break;
     }
   }

@@ -210,7 +210,7 @@ max_frequency = "5s"
 # `discord`, `facebook`, `github`, `gitlab`, `google`, `keycloak`, `linkedin_oidc`, `notion`, `twitch`,
 # `twitter`, `slack`, `spotify`, `workos`, `zoom`.
 [auth.external.apple]
-enabled = true
+enabled = false
 client_id = ""
 # DO NOT commit your OAuth provider secret to git. Use environment variable substitution instead:
 #secret = "env(SUPABASE_AUTH_EXTERNAL_APPLE_SECRET)"
@@ -224,29 +224,31 @@ skip_nonce_check = false
 
 [auth.external.google]
 enabled = true
-#client_id = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID)"
+client_id = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID)"
 #secret = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET)"
 #redirect_uri = "https://cf7f-120-74-21-108.ngrok-free.app/auth/v1/callback"
 skip_nonce_check = true
 
 [auth.external.twitter]
-enabled = true
-#client_id = "env(SUPABASE_AUTH_EXTERNAL_X_CLIENT_ID)"
-#secret = "env(SUPABASE_AUTH_EXTERNAL_X_SECRET)"
+enabled = false
+client_id = "env(SUPABASE_AUTH_EXTERNAL_X_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_EXTERNAL_X_SECRET)"
 #redirect_uri = "https://cf7f-120-74-21-108.ngrok-free.app/auth/v1/callback"
 skip_nonce_check = true
 
 [auth.external.twitch]
-enabled = true
-#client_id = "env(SUPABASE_AUTH_EXTERNAL_TWITCH_CLIENT_ID)"
-#secret = "env(SUPABASE_AUTH_EXTERNAL_TWITCH_SECRET)"
-#redirect_uri = "https://cf7f-120-74-21-108.ngrok-free.app/auth/v1/callback"
+enabled = false
+client_id = "env(SUPABASE_AUTH_EXTERNAL_TWITCH_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_EXTERNAL_TWITCH_SECRET)"
+redirect_uri = "https://cf7f-120-74-21-108.ngrok-free.app/auth/v1/callback"
+skip_nonce_check = true
 
 [auth.external.discord]
 enabled = true
-#client_id = "env(SUPABASE_AUTH_EXTERNAL_DISCORD_CLIENT_ID)"
-#secret = "env(SUPABASE_AUTH_EXTERNAL_DISCORD_SECRET)"
+client_id = "env(SUPABASE_AUTH_EXTERNAL_DISCORD_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_EXTERNAL_DISCORD_SECRET)"
 #redirect_uri = "https://cf7f-120-74-21-108.ngrok-free.app/auth/v1/callback"
+skip_nonce_check = true
 
 # Use Firebase Auth as a third-party provider alongside Supabase Auth.
 [auth.third_party.firebase]

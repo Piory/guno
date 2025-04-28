@@ -1,14 +1,13 @@
 import { AuthRepository } from '@core/domain';
 import { SignInUseCase } from './index.ts';
 
-jest.mock('react-native-app-auth', () => ({}));
-
 describe('SignInUseCase', () => {
   const signInWithAppleMock = jest.fn();
   const signInWithGoogleMock = jest.fn();
   const signInWithXMock = jest.fn();
   const signInWithTwitchMock = jest.fn();
   const signInWithDiscordMock = jest.fn();
+  const signInWithAnonymousMock = jest.fn();
   const signOutMock = jest.fn();
   const AuthRepositoryMock = jest.fn<AuthRepository, []>().mockImplementation(() => ({
     signInWithApple: signInWithAppleMock,
@@ -16,6 +15,7 @@ describe('SignInUseCase', () => {
     signInWithX: signInWithXMock,
     signInWithTwitch: signInWithTwitchMock,
     signInWithDiscord: signInWithDiscordMock,
+    signInWithAnonymous: signInWithAnonymousMock,
     signOut: signOutMock,
   }));
   const useCase = new SignInUseCase(new AuthRepositoryMock());
@@ -33,6 +33,7 @@ describe('SignInUseCase', () => {
         expect(signInWithXMock).not.toHaveBeenCalled();
         expect(signInWithTwitchMock).not.toHaveBeenCalled();
         expect(signInWithDiscordMock).not.toHaveBeenCalled();
+        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
         expect(signOutMock).not.toHaveBeenCalled();
       });
 
@@ -43,6 +44,7 @@ describe('SignInUseCase', () => {
         expect(signInWithXMock).not.toHaveBeenCalled();
         expect(signInWithTwitchMock).not.toHaveBeenCalled();
         expect(signInWithDiscordMock).not.toHaveBeenCalled();
+        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
         expect(signOutMock).not.toHaveBeenCalled();
       });
 
@@ -53,6 +55,7 @@ describe('SignInUseCase', () => {
         expect(signInWithXMock).toHaveBeenCalledTimes(1);
         expect(signInWithTwitchMock).not.toHaveBeenCalled();
         expect(signInWithDiscordMock).not.toHaveBeenCalled();
+        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
         expect(signOutMock).not.toHaveBeenCalled();
       });
 
@@ -63,6 +66,7 @@ describe('SignInUseCase', () => {
         expect(signInWithXMock).not.toHaveBeenCalled();
         expect(signInWithTwitchMock).toHaveBeenCalledTimes(1);
         expect(signInWithDiscordMock).not.toHaveBeenCalled();
+        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
         expect(signOutMock).not.toHaveBeenCalled();
       });
 
@@ -73,6 +77,18 @@ describe('SignInUseCase', () => {
         expect(signInWithXMock).not.toHaveBeenCalled();
         expect(signInWithTwitchMock).not.toHaveBeenCalled();
         expect(signInWithDiscordMock).toHaveBeenCalledTimes(1);
+        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
+        expect(signOutMock).not.toHaveBeenCalled();
+      });
+
+      it('anonymous を渡すと、AuthRepository#signInWithAnonymous が呼ばれること', async () => {
+        await useCase.execute('anonymous');
+        expect(signInWithAppleMock).not.toHaveBeenCalled();
+        expect(signInWithGoogleMock).not.toHaveBeenCalled();
+        expect(signInWithXMock).not.toHaveBeenCalled();
+        expect(signInWithTwitchMock).not.toHaveBeenCalled();
+        expect(signInWithDiscordMock).not.toHaveBeenCalled();
+        expect(signInWithAnonymousMock).toHaveBeenCalledTimes(1);
         expect(signOutMock).not.toHaveBeenCalled();
       });
     });

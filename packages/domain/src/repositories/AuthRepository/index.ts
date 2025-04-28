@@ -9,5 +9,7 @@ export interface AuthRepository {
 
   signInWithDiscord(): Promise<any>;
 
+  signInWithAnonymous(): Promise<any>;
+
   signOut(): Promise<any>;
 }

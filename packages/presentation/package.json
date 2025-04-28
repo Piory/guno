@@ -10,6 +10,7 @@
     "@core/domain": "workspace:*",
     "@core/shared": "workspace:*",
     "@core/usecase": "workspace:*",
+    "@core/infrastructure": "workspace:*",
     "@tamagui/config": "1.126.1",
     "@tamagui/core": "1.126.1",
     "@tamagui/font-inter": "1.126.1",
@@ -18,23 +19,18 @@
     "@tamagui/themes": "1.126.1",
     "burnt": "0.13.0",
     "i18next": "25.0.0",
+    "react": "19.1.0",
     "react-i18next": "15.4.1",
     "tamagui": "1.126.1"
   },
-  "peerDependencies": {
-    "@react-native/eslint-config": "0.78.2",
-    "@types/react": "19.1.1",
-    "@types/react-test-renderer": "19.1.0",
-    "react": "19.1.0",
-    "react-native": "0.78.2",
-    "react-native-app-auth": "8.0.2",
-    "react-native-localize": "3.4.1",
-    "react-native-svg": "15.11.2",
-    "react-native-vector-icons": "10.2.0",
-    "react-test-renderer": "19.1.0"
-  },
   "devDependencies": {
+    "@babel/core": "7.26.10",
+    "@babel/plugin-transform-runtime": "7.26.10",
+    "@babel/preset-env": "7.26.9",
+    "@babel/runtime": "7.27.0",
+    "@types/react": "19.1.1",
     "@testing-library/jest-dom": "6.6.3",
-    "@testing-library/react-native": "13.2.0"
+    "@testing-library/react-native": "13.2.0",
+    "react-test-renderer": "19.1.0"
   }
 }

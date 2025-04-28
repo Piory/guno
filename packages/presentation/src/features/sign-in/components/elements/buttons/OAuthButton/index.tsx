@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Button, Paragraph, Spacer, View, XStack, styled } from 'tamagui';
-import { DIContainer } from '@core/shared';
 import { SignInUseCase } from '@core/usecase';
+import { useUseCases } from '../../../../../../contexts/UseCaseContainer';
 
 type Props = {
   type: Parameters<SignInUseCase['execute']>[0];
@@ -12,7 +12,8 @@ type Props = {
   textColor: string;
 };
 
-export const OAuthButton: React.FunctionComponent<Props> = ({ type, icon, text, backgroundColor, borderColor, textColor }) => {
+export const OAuthButton: React.FC<Props> = ({ type, icon, text, backgroundColor, borderColor, textColor }) => {
+  const { signInUseCase } = useUseCases();
   const StaticButton = styled(Button, {
     borderRadius: '$6',
     backgroundColor: backgroundColor,
@@ -33,7 +34,7 @@ export const OAuthButton: React.FunctionComponent<Props> = ({ type, icon, text, 
   });
   return (
     <>
-      <StaticButton borderColor={borderColor} onPress={() => DIContainer.resolve(SignInUseCase).execute(type)}>
+      <StaticButton borderColor={borderColor} onPress={() => signInUseCase.execute(type)}>
         <XStack flex={1} width='100%' alignItems='center' justifyContent='center'>
           <View width='24' height='24' justifyContent='center' alignItems='center'>
             {icon ?? null}

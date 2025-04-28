@@ -1,11 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AlertDialog, Button, Paragraph, XStack, styled, useTheme } from 'tamagui';
-import { DIContainer } from '@core/shared';
-import { SignInUseCase } from '@core/usecase';
+import { useUseCases } from '../../../../../../contexts/UseCaseContainer';
 
 export function SignInWithGuestButton(): React.JSX.Element {
   const { t } = useTranslation();
+  const { signInUseCase } = useUseCases();
   const theme = useTheme();
   const StaticButton = styled(Button, {
     borderRadius: '$6',
@@ -25,7 +25,7 @@ export function SignInWithGuestButton(): React.JSX.Element {
     },
   });
   const onPress = () => {
-    DIContainer.resolve(SignInUseCase).execute('google');
+    return signInUseCase.execute('google');
   };
   return (
     <AlertDialog native>
