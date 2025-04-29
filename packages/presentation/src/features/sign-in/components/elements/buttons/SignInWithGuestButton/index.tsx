@@ -6,22 +6,18 @@ import { useUseCases } from '../../../../../../contexts/UseCaseContainer';
 export function SignInWithGuestButton(): React.JSX.Element {
   const { t } = useTranslation();
   const { signInUseCase } = useUseCases();
-  const theme = useTheme();
+  const { color, subtle } = useTheme();
   const StaticButton = styled(Button, {
     borderRadius: '$6',
-    backgroundColor: theme.buttonColor,
-    borderColor: theme.buttonColor,
+    borderColor: subtle?.get(),
     hoverStyle: {
-      backgroundColor: theme.buttonColor,
-      borderColor: theme.buttonColor,
+      borderColor: subtle?.get(),
     },
     pressStyle: {
-      backgroundColor: theme.buttonColor,
-      borderColor: theme.buttonColor,
+      borderColor: subtle?.get(),
     },
     focusStyle: {
-      backgroundColor: theme.buttonColor,
-      borderColor: theme.buttonColor,
+      borderColor: subtle?.get(),
     },
   });
   const onPress = () => {
