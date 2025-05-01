@@ -5,7 +5,7 @@ import { Provider } from '@core/presentation';
 import { Navigation } from './navigation';
 
 export const App: React.FC = () => {
-  const theme = useColorScheme() != 'dark' ? 'dark' : 'light';
+  const theme = useColorScheme() === 'dark' ? 'dark' : 'light';
   return (
     <>
       <SafeAreaProvider>

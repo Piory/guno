@@ -4,6 +4,7 @@ declare module 'react-native-config' {
     APP_ID: string;
     APP_NAME: string;
     APP_DISPLAY_NAME: string;
+    WEB_URL: string;
     SUPABASE_URL: string;
     SUPABASE_ANON_KEY: string;
     SUPABASE_SERVICE_ROLE_KEY: string;

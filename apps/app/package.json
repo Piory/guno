@@ -16,7 +16,9 @@
   },
   "dependencies": {
     "@core/presentation": "workspace:*",
+    "@core/shared": "workspace:*",
     "@react-native-async-storage/async-storage": "2.1.2",
+    "@react-native-community/blur": "4.4.1",
     "@react-navigation/bottom-tabs": "7.3.10",
     "@react-navigation/elements": "2.3.8",
     "@react-navigation/native": "7.1.6",
@@ -51,10 +53,10 @@
     "@react-native/metro-config": "0.78.2",
     "@react-native/typescript-config": "0.78.2",
     "@types/react": "19.1.1",
-    "@types/react-test-renderer": "19.1.0",
+    "@types/react-test-renderer": "19.0.0",
     "babel-plugin-module-resolver": "5.0.2",
     "babel-plugin-transform-typescript-metadata": "0.3.2",
     "react-native-svg-transformer": "1.5.0",
-    "react-test-renderer": "19.1.0"
+    "react-test-renderer": "19.0.0"
   }
 }

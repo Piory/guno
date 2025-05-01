@@ -1,5 +1,5 @@
 module.exports = {
   preset: 'react-native',
-  testEnvironment: 'node',
-  setupFiles: ['<rootDir>/jest.setup.ts'],
+  testEnvironment: 'jsdom',
+  setupFiles: ['<rootDir>/jest.setup.js'],
 };

@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { useRouter } from 'solito/router';
 import { Button, Paragraph, Spacer, View, XStack, styled } from 'tamagui';
 import { SignInUseCase } from '@core/usecase';
 import { useUseCases } from '../../../../../../contexts/UseCaseContainer';
@@ -13,6 +14,7 @@ type Props = {
 };
 
 export const OAuthButton: React.FC<Props> = ({ type, icon, text, backgroundColor, borderColor, textColor }) => {
+  const { replace } = useRouter();
   const { signInUseCase } = useUseCases();
   const StaticButton = styled(Button, {
     borderRadius: '$6',
@@ -34,7 +36,13 @@ export const OAuthButton: React.FC<Props> = ({ type, icon, text, backgroundColor
   });
   return (
     <>
-      <StaticButton borderColor={borderColor} onPress={() => signInUseCase.execute(type)}>
+      <StaticButton
+        borderColor={borderColor}
+        onPress={async () => {
+          await signInUseCase.execute(type);
+          replace('/home');
+        }}
+      >
         <XStack flex={1} width='100%' alignItems='center' justifyContent='center'>
           <View width='24' height='24' justifyContent='center' alignItems='center'>
             {icon ?? null}

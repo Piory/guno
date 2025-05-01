@@ -52,6 +52,7 @@ const config = createTamagui({
   themes: {
     light: {
       background: customTokens.color.neutral100,
+      tabBarBackground: customTokens.color.neutral200,
       color: customTokens.color.neutral900,
       // brand accents
       primary: customTokens.color.primary,
@@ -68,6 +69,7 @@ const config = createTamagui({
     },
     dark: {
       background: customTokens.color.neutral900,
+      tabBarBackground: customTokens.color.neutral700,
       color: customTokens.color.neutral100,
       // brand accents
       primary: customTokens.color.primary,
