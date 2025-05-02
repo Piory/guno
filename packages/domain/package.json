@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "gen-table-types": "supabase gen types typescript --local > ./src/types/database.d.ts && npx better-supabase-types -i ./src/types/database.d.ts -f"
+  },
+  "devDependencies": {
+    "better-supabase-types": "2.7.6"
   }
 }

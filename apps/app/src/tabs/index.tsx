@@ -18,7 +18,7 @@ export const HomeTabs: React.FC = () => {
           component={HomeScreen}
           options={{
             title: 'ホーム',
-            tabBarIcon: ({ focused, color, size }) => <Home size={size} color={color} />,
+            tabBarIcon: ({ color, size }) => <Home size={size} color={color} />,
           }}
         />
         <Tab.Screen
@@ -26,7 +26,7 @@ export const HomeTabs: React.FC = () => {
           component={ProfileScreen}
           options={{
             title: 'プロフィール',
-            tabBarIcon: ({ focused, color, size }) => <User size={size} color={color} />,
+            tabBarIcon: ({ color, size }) => <User size={size} color={color} />,
           }}
         />
       </Tab.Navigator>

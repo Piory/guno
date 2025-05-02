@@ -1,24 +1,10 @@
+import { mock } from 'jest-mock-extended';
 import { AuthRepository } from '@core/domain';
 import { SignInUseCase } from './index.ts';
 
 describe('SignInUseCase', () => {
-  const signInWithAppleMock = jest.fn();
-  const signInWithGoogleMock = jest.fn();
-  const signInWithXMock = jest.fn();
-  const signInWithTwitchMock = jest.fn();
-  const signInWithDiscordMock = jest.fn();
-  const signInWithAnonymousMock = jest.fn();
-  const signOutMock = jest.fn();
-  const AuthRepositoryMock = jest.fn<AuthRepository, []>().mockImplementation(() => ({
-    signInWithApple: signInWithAppleMock,
-    signInWithGoogle: signInWithGoogleMock,
-    signInWithX: signInWithXMock,
-    signInWithTwitch: signInWithTwitchMock,
-    signInWithDiscord: signInWithDiscordMock,
-    signInWithAnonymous: signInWithAnonymousMock,
-    signOut: signOutMock,
-  }));
-  const useCase = new SignInUseCase(new AuthRepositoryMock());
+  const mockAuthRepository = mock<AuthRepository>();
+  const useCase = new SignInUseCase(mockAuthRepository);
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -28,68 +14,62 @@ describe('SignInUseCase', () => {
     describe('正常系', () => {
       it('apple を渡すと、AuthRepository#signInWithApple が呼ばれること', async () => {
         await useCase.execute('apple');
-        expect(signInWithAppleMock).toHaveBeenCalledTimes(1);
-        expect(signInWithGoogleMock).not.toHaveBeenCalled();
-        expect(signInWithXMock).not.toHaveBeenCalled();
-        expect(signInWithTwitchMock).not.toHaveBeenCalled();
-        expect(signInWithDiscordMock).not.toHaveBeenCalled();
-        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
-        expect(signOutMock).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithApple).toHaveBeenCalledTimes(1);
+        expect(mockAuthRepository.signInWithGoogle).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithX).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithTwitch).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithDiscord).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithAnonymous).not.toHaveBeenCalled();
       });
 
       it('google を渡すと、AuthRepository#signInWithGoogle が呼ばれること', async () => {
         await useCase.execute('google');
-        expect(signInWithAppleMock).not.toHaveBeenCalled();
-        expect(signInWithGoogleMock).toHaveBeenCalledTimes(1);
-        expect(signInWithXMock).not.toHaveBeenCalled();
-        expect(signInWithTwitchMock).not.toHaveBeenCalled();
-        expect(signInWithDiscordMock).not.toHaveBeenCalled();
-        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
-        expect(signOutMock).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithApple).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithGoogle).toHaveBeenCalledTimes(1);
+        expect(mockAuthRepository.signInWithX).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithTwitch).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithDiscord).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithAnonymous).not.toHaveBeenCalled();
       });
 
       it('x を渡すと、AuthRepository#signInWithX が呼ばれること', async () => {
         await useCase.execute('x');
-        expect(signInWithAppleMock).not.toHaveBeenCalled();
-        expect(signInWithGoogleMock).not.toHaveBeenCalled();
-        expect(signInWithXMock).toHaveBeenCalledTimes(1);
-        expect(signInWithTwitchMock).not.toHaveBeenCalled();
-        expect(signInWithDiscordMock).not.toHaveBeenCalled();
-        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
-        expect(signOutMock).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithApple).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithGoogle).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithX).toHaveBeenCalledTimes(1);
+        expect(mockAuthRepository.signInWithTwitch).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithDiscord).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithAnonymous).not.toHaveBeenCalled();
       });
 
       it('twitch を渡すと、AuthRepository#signInWithTwitch が呼ばれること', async () => {
         await useCase.execute('twitch');
-        expect(signInWithAppleMock).not.toHaveBeenCalled();
-        expect(signInWithGoogleMock).not.toHaveBeenCalled();
-        expect(signInWithXMock).not.toHaveBeenCalled();
-        expect(signInWithTwitchMock).toHaveBeenCalledTimes(1);
-        expect(signInWithDiscordMock).not.toHaveBeenCalled();
-        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
-        expect(signOutMock).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithApple).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithGoogle).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithX).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithTwitch).toHaveBeenCalledTimes(1);
+        expect(mockAuthRepository.signInWithDiscord).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithAnonymous).not.toHaveBeenCalled();
       });
 
       it('discord を渡すと、AuthRepository#signInWithDiscord が呼ばれること', async () => {
         await useCase.execute('discord');
-        expect(signInWithAppleMock).not.toHaveBeenCalled();
-        expect(signInWithGoogleMock).not.toHaveBeenCalled();
-        expect(signInWithXMock).not.toHaveBeenCalled();
-        expect(signInWithTwitchMock).not.toHaveBeenCalled();
-        expect(signInWithDiscordMock).toHaveBeenCalledTimes(1);
-        expect(signInWithAnonymousMock).not.toHaveBeenCalled();
-        expect(signOutMock).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithApple).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithGoogle).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithX).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithTwitch).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithDiscord).toHaveBeenCalledTimes(1);
+        expect(mockAuthRepository.signInWithAnonymous).not.toHaveBeenCalled();
       });
 
       it('anonymous を渡すと、AuthRepository#signInWithAnonymous が呼ばれること', async () => {
         await useCase.execute('anonymous');
-        expect(signInWithAppleMock).not.toHaveBeenCalled();
-        expect(signInWithGoogleMock).not.toHaveBeenCalled();
-        expect(signInWithXMock).not.toHaveBeenCalled();
-        expect(signInWithTwitchMock).not.toHaveBeenCalled();
-        expect(signInWithDiscordMock).not.toHaveBeenCalled();
-        expect(signInWithAnonymousMock).toHaveBeenCalledTimes(1);
-        expect(signOutMock).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithApple).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithGoogle).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithX).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithTwitch).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithDiscord).not.toHaveBeenCalled();
+        expect(mockAuthRepository.signInWithAnonymous).toHaveBeenCalledTimes(1);
       });
     });
   });

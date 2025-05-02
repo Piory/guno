@@ -1,12 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRouter } from 'solito/router';
 import { AlertDialog, Button, Paragraph, XStack, styled, useTheme } from 'tamagui';
-import { useUseCases } from '../../../../../../contexts/UseCaseContainer';
+import { useAuth } from '../../../../../../contexts';
 
 export function SignInWithGuestButton(): React.JSX.Element {
   const { t } = useTranslation();
-  const { signInUseCase } = useUseCases();
+  const { signIn } = useAuth();
   const { subtle } = useTheme();
   const StaticButton = styled(Button, {
     borderRadius: '$6',
@@ -21,9 +20,7 @@ export function SignInWithGuestButton(): React.JSX.Element {
       borderColor: subtle?.get(),
     },
   });
-  const onPress = () => {
-    return signInUseCase.execute('anonymous');
-  };
+  const onPress = () => signIn('anonymous');
   return (
     <AlertDialog native>
       <AlertDialog.Trigger asChild>

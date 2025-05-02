@@ -1,57 +1,30 @@
+import { defaultConfig } from '@tamagui/config/v4';
 import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { TamaguiProvider } from 'tamagui';
-import { SignInUseCase } from '@core/usecase';
-import { AuthRepository } from '@core/domain';
-import config from '../../../../../../../tamagui.config.ts';
-import { UseCaseProvider } from '../../../../../../contexts/UseCaseContainer';
+import { TamaguiProvider, createTamagui } from 'tamagui';
+import { OAuthButton } from './index.tsx';
 
-jest.mock('solito/router', () => {
+jest.mock('../../../../../../contexts', () => {
   // モックファクトリ内で直接作る
-  const replaceMock = jest.fn();
+  const mockSignIn = jest.fn();
   return {
     __esModule: true,
-    useRouter: jest.fn().mockImplementation(() => ({
-      replace: replaceMock,
+    useAuth: jest.fn().mockImplementation(() => ({
+      signIn: mockSignIn,
     })),
-    // 必要ならテスト内で import して使えるようエクスポート
-    replaceMock: replaceMock,
+    mockSignIn: mockSignIn,
   };
 });
 
-jest.mock('@core/usecase', () => {
-  const executeMock = jest.fn<Promise<void>, [string]>();
-  return {
-    __esModule: true,
-    SignInUseCase: jest.fn().mockImplementation(() => ({
-      execute: executeMock,
-    })),
-    executeMock: executeMock,
-  };
-});
-
-const executeMock = require('@core/usecase').executeMock;
-
-jest.mock('../../../../../../composition', () => ({
-  useCaseContainer: {},
-}));
-
-const replaceMock = require('solito/router').replaceMock;
-
-const OAuthButton = require('./index.tsx').OAuthButton;
+const mockSignIn = require('../../../../../../contexts').mockSignIn;
 
 describe('<OAuthButton />', () => {
+  const config = createTamagui(defaultConfig);
   const setup = () => {
     return render(
-      <UseCaseProvider
-        container={{
-          signInUseCase: new SignInUseCase({} as AuthRepository),
-        }}
-      >
-        <TamaguiProvider config={config} defaultTheme='light'>
-          <OAuthButton type='google' icon={<div />} backgroundColor='#FFF' borderColor='#FFF' text='Sign in with Google' textColor='#000' />
-        </TamaguiProvider>
-      </UseCaseProvider>,
+      <TamaguiProvider config={config}>
+        <OAuthButton type='google' icon={<div />} backgroundColor='#FFF' borderColor='#FFF' text='Sign in with Google' textColor='#000' />
+      </TamaguiProvider>,
     );
   };
 
@@ -68,14 +41,11 @@ describe('<OAuthButton />', () => {
     setup();
     const button = screen.getByText('Sign in with Google');
     expect(button).toBeInTheDocument();
-    expect(executeMock).not.toHaveBeenCalled();
-    expect(replaceMock).not.toHaveBeenCalled();
+    expect(mockSignIn).not.toHaveBeenCalled();
     await act(async () => {
       fireEvent.click(button);
     });
-    expect(executeMock).toHaveBeenCalledTimes(1);
-    expect(executeMock).toHaveBeenCalledWith('google');
-    expect(replaceMock).toHaveBeenCalledTimes(1);
-    expect(replaceMock).toHaveBeenCalledWith('/home');
+    expect(mockSignIn).toHaveBeenCalledTimes(1);
+    expect(mockSignIn).toHaveBeenCalledWith('google');
   });
 });

@@ -28,10 +28,12 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@faker-js/faker": "9.7.0",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "@types/jest": "29.5.14",
     "eslint": "9.25.1",
     "jest": "29.7.0",
+    "jest-mock-extended": "4.0.0-beta1",
     "prettier": "3.5.3",
     "ts-jest": "29.3.2",
     "turbo": "2.5.2",

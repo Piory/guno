@@ -1,11 +1,10 @@
 import React, { ReactNode } from 'react';
-import { useRouter } from 'solito/router';
 import { Button, Paragraph, Spacer, View, XStack, styled } from 'tamagui';
-import { SignInUseCase } from '@core/usecase';
-import { useUseCases } from '../../../../../../contexts/UseCaseContainer';
+import { AuthProviderType } from '@core/domain';
+import { useAuth } from '../../../../../../contexts';
 
 type Props = {
-  type: Parameters<SignInUseCase['execute']>[0];
+  type: AuthProviderType;
   icon?: ReactNode;
   text: string;
   backgroundColor: string;
@@ -14,8 +13,7 @@ type Props = {
 };
 
 export const OAuthButton: React.FC<Props> = ({ type, icon, text, backgroundColor, borderColor, textColor }) => {
-  const { replace } = useRouter();
-  const { signInUseCase } = useUseCases();
+  const { signIn } = useAuth();
   const StaticButton = styled(Button, {
     borderRadius: '$6',
     backgroundColor: backgroundColor,
@@ -36,13 +34,7 @@ export const OAuthButton: React.FC<Props> = ({ type, icon, text, backgroundColor
   });
   return (
     <>
-      <StaticButton
-        borderColor={borderColor}
-        onPress={async () => {
-          await signInUseCase.execute(type);
-          replace('/home');
-        }}
-      >
+      <StaticButton borderColor={borderColor} onPress={() => signIn(type)}>
         <XStack flex={1} width='100%' alignItems='center' justifyContent='center'>
           <View width='24' height='24' justifyContent='center' alignItems='center'>
             {icon ?? null}

@@ -6,37 +6,41 @@ exports[`<OAuthButton /> スナップショットが一致すること 1`] = `
     class=""
     style="display: contents;"
   >
-    <button
-      class="is_Button _outlineStyle-0focus-visible-solid _outlineWidth-0focus-visible-2px _bg-0hover-FFF35 _btc-0hover-FFF35 _brc-0hover-FFF35 _borderBottomColor-0hover-FFF35 _borderLeftColor-0hover-FFF35 _bg-0active-FFF35 _btc-0active-FFF35 _brc-0active-FFF35 _borderBottomColor-0active-FFF35 _borderLeftColor-0active-FFF35 _bg-0focus-FFF35 _btc-0focus-FFF35 _brc-0focus-FFF35 _borderBottomColor-0focus-FFF35 _borderLeftColor-0focus-FFF35 _dsp-flex _items-center _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-0 _flexDirection-row _pr-t-space-tru101 _pl-t-space-tru101 _height-t-size-true _btlr-t-radius-6 _btrr-t-radius-6 _borderBottomRightRadius-t-radius-6 _borderBottomLeftRadius-t-radius-6 _justify-center _fwr-nowrap _cur-pointer _bg-FFF35 _btw-1px _brw-1px _borderBottomWidth-1px _borderLeftWidth-1px _btc-FFF35 _brc-FFF35 _borderBottomColor-FFF35 _borderLeftColor-FFF35 _borderBottomStyle-solid _borderTopStyle-solid _borderLeftStyle-solid _borderRightStyle-solid"
-      data-disable-theme="true"
-      role="button"
-      tabindex="0"
+    <span
+      class="t_sub_theme t_Button _dsp_contents is_Theme"
     >
-      <div
-        class="_dsp-flex _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-1 _flexDirection-row _grow-1 _width-10037 _items-center _justify-center"
+      <button
+        class="is_Button _bg-0hover-FFF35 _btc-0hover-FFF35 _brc-0hover-FFF35 _borderBottomColor-0hover-FFF35 _borderLeftColor-0hover-FFF35 _bg-0active-FFF35 _btc-0active-FFF35 _brc-0active-FFF35 _borderBottomColor-0active-FFF35 _borderLeftColor-0active-FFF35 _outlineColor-0focus-visible-outlineColo114 _outlineStyle-0focus-visible-solid _outlineWidth-0focus-visible-2px _bg-0focus-FFF35 _btc-0focus-FFF35 _brc-0focus-FFF35 _borderBottomColor-0focus-FFF35 _borderLeftColor-0focus-FFF35 _dsp-flex _items-center _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-0 _flexDirection-row _pr-c-space-tru101 _pl-c-space-tru101 _height-c-size-true _btlr-c-radius-6 _btrr-c-radius-6 _borderBottomRightRadius-c-radius-6 _borderBottomLeftRadius-c-radius-6 _justify-center _fwr-nowrap _cur-pointer _bg-FFF35 _btw-1px _brw-1px _borderBottomWidth-1px _borderLeftWidth-1px _btc-FFF35 _brc-FFF35 _borderBottomColor-FFF35 _borderLeftColor-FFF35 _borderBottomStyle-solid _borderTopStyle-solid _borderLeftStyle-solid _borderRightStyle-solid"
+        data-disable-theme="true"
+        role="button"
+        tabindex="0"
       >
         <div
-          class="_dsp-flex _flexDirection-column _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-0 _width-24 _height-24 _justify-center _items-center"
+          class="_dsp-flex _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-1 _flexDirection-row _grow-1 _width-10037 _items-center _justify-center"
         >
-          <div />
-        </div>
-        <span
-          class="is_Spacer _dsp-flex _items-stretch _flexDirection-column _flexBasis-auto _bxs-border-box _pos-relative _minH-t-space-6 _minW-t-space-6 _shrink-0 _pe-none _width-t-space-6 _height-t-space-6"
-        />
-        <div
-          class="_dsp-flex _items-stretch _flexDirection-column _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-0"
-        >
-          <p
-            class="is_Paragraph font_body _dsp-inline _bxs-border-box _ww-break-word _mt-0px _mr-0px _mb-0px _ml-0px _ff-f-family _fw-bold _ls-f-letterSpa1360334201 _fs-f-size-5 _lh-f-lineHeigh112924 _col-00035 _select-auto _ws-normal"
+          <div
+            class="_dsp-flex _flexDirection-column _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-0 _width-24 _height-24 _justify-center _items-center"
           >
-            Sign in with Google
-          </p>
+            <div />
+          </div>
+          <span
+            class="is_Spacer _dsp-flex _items-stretch _flexDirection-column _flexBasis-auto _bxs-border-box _pos-relative _minH-c-space-6 _minW-c-space-6 _shrink-0 _pe-none _width-c-space-6 _height-c-space-6"
+          />
+          <div
+            class="_dsp-flex _items-stretch _flexDirection-column _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-0"
+          >
+            <p
+              class="is_Paragraph font_body _dsp-inline _bxs-border-box _ww-break-word _mt-0px _mr-0px _mb-0px _ml-0px _ff-f-family _fw-bold _ls-f-letterSpa1360334201 _fs-f-size-5 _lh-f-lineHeigh112924 _col-00035 _select-auto _ws-normal"
+            >
+              Sign in with Google
+            </p>
+          </div>
+          <span
+            class="is_Spacer _dsp-flex _items-stretch _flexDirection-column _flexBasis-auto _bxs-border-box _pos-relative _minH-24 _minW-24 _shrink-0 _pe-none _width-24 _height-24"
+          />
         </div>
-        <span
-          class="is_Spacer _dsp-flex _items-stretch _flexDirection-column _flexBasis-auto _bxs-border-box _pos-relative _minH-24 _minW-24 _shrink-0 _pe-none _width-24 _height-24"
-        />
-      </div>
-    </button>
+      </button>
+    </span>
     <div
       style="display: contents;"
     />

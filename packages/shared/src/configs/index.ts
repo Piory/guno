@@ -1,3 +1,3 @@
-export * from './AppConfig';
-export * from './OAuthConfig';
-export * from './SupabaseConfig';
+export * from './appConfig';
+export * from './oAuthConfig';
+export * from './supabaseConfig';

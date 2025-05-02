@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { TamaguiProvider } from 'tamagui';
 import config from '../tamagui.config.ts';
-import { UseCaseProvider } from './contexts/UseCaseContainer';
+import { AuthProvider, UseCaseProvider } from './contexts';
 import './locales/config/index.ts';
 
 type Props = {
@@ -11,9 +11,11 @@ type Props = {
 export const Provider: React.FC<PropsWithChildren<Props>> = ({ children, theme }) => {
   return (
     <UseCaseProvider>
-      <TamaguiProvider config={config} defaultTheme={theme}>
-        {children}
-      </TamaguiProvider>
+      <AuthProvider>
+        <TamaguiProvider config={config} defaultTheme={theme}>
+          {children}
+        </TamaguiProvider>
+      </AuthProvider>
     </UseCaseProvider>
   );
 };

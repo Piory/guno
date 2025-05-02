@@ -1,9 +1,12 @@
 import React, { ReactNode, createContext, useContext } from 'react';
-import { SignInUseCase } from '@core/usecase';
+import { FindSuiteUserUseCase, GetCurrentUserIdUseCase, SignInUseCase, SignOutUseCase } from '@core/usecase';
 import { useCaseContainer } from '../../composition';
 
 export interface UseCaseContainer {
+  readonly findSuiteUserUseCase: FindSuiteUserUseCase;
+  readonly getCurrentUserIdUseCase: GetCurrentUserIdUseCase;
   readonly signInUseCase: SignInUseCase;
+  readonly signOutUseCase: SignOutUseCase;
 }
 
 const UseCaseContext = createContext<UseCaseContainer>(useCaseContainer);
@@ -18,6 +21,4 @@ export const UseCaseProvider: React.FC<ProviderProps> = ({ container = {}, child
 };
 
 // カスタムフック
-export function useUseCases(): UseCaseContainer {
-  return useContext(UseCaseContext);
-}
+export const useUseCases = () => useContext(UseCaseContext);

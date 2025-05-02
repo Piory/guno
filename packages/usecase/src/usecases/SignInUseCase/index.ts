@@ -1,10 +1,10 @@
-import * as domain from '@core/domain';
+import { AuthProviderType, AuthRepository } from '@core/domain';
 
 export class SignInUseCase {
-  constructor(private readonly authRepository: domain.AuthRepository) {}
+  constructor(private readonly authRepository: AuthRepository) {}
 
-  async execute(type: 'apple' | 'google' | 'x' | 'twitch' | 'discord' | 'anonymous'): Promise<void> {
-    switch (type) {
+  async execute(provider: AuthProviderType): Promise<void> {
+    switch (provider) {
       case 'apple':
         await this.authRepository.signInWithApple();
         break;

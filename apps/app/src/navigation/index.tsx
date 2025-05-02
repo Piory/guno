@@ -3,6 +3,7 @@ import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from 'tamagui';
 import { AppConfig } from '@core/shared';
+import { useAuth } from '@core/presentation';
 import { NotFoundScreen, SignInScreen } from '../screens';
 import { HomeTabs } from '../tabs';
 
@@ -17,6 +18,7 @@ type Props = {
 };
 
 export const Navigation: React.FC<Props> = ({ theme }) => {
+  const { userId } = useAuth();
   const { background, color, primary } = useTheme();
   const navigationTheme = theme === 'dark' ? DarkTheme : DefaultTheme;
   const navTheme = {
@@ -52,13 +54,12 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
         }}
       >
         <Stack.Navigator
-          initialRouteName='Home'
+          initialRouteName={userId ? 'Home' : 'SignIn'}
           screenOptions={{
             headerShown: false,
           }}
         >
-          <Stack.Screen name='SignIn' component={SignInScreen} />
-          <Stack.Screen name='Home' component={HomeTabs} />
+          {userId ? <Stack.Screen name='Home' component={HomeTabs} /> : <Stack.Screen name='SignIn' component={SignInScreen} />}
           <Stack.Screen name='NotFound' component={NotFoundScreen} />
         </Stack.Navigator>
       </NavigationContainer>

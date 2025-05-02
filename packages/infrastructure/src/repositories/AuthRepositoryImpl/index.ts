@@ -1,22 +1,63 @@
 import { authorize } from 'react-native-app-auth';
 import { SupabaseClient } from '@supabase/supabase-js';
 import { OAuthConfig } from '@core/shared';
-import { AuthRepository } from '@core/domain';
+import { AuthProviderType, AuthRepository, AuthStatus, Database, User } from '@core/domain';
 
 export class AuthRepositoryImpl implements AuthRepository {
-  constructor(private readonly supabase: SupabaseClient) {}
+  constructor(private readonly supabase: SupabaseClient<Database>) {}
+
+  onAuthStateChange(callback: (authStatus: AuthStatus, userId: string | undefined) => void): () => void {
+    const { data } = this.supabase.auth.onAuthStateChange((event, session) => {
+      switch (event) {
+        case 'SIGNED_IN':
+        case 'SIGNED_OUT':
+          callback(event, session?.user.id);
+      }
+    });
+    return data.subscription.unsubscribe;
+  }
+
+  async getCurrentUserId(): Promise<string | undefined> {
+    const {
+      data: { user },
+    } = await this.supabase.auth.getUser();
+    return user?.id;
+  }
+
+  async getCurrentUser(): Promise<User | undefined> {
+    const {
+      data: { user },
+    } = await this.supabase.auth.getUser();
+    if (!user) {
+      return undefined;
+    }
+    return new User(
+      user.id,
+      (user.user_metadata['display_name'] as string) ?? '',
+      user.email ?? '',
+      user.identities?.map(identity => identity.provider as AuthProviderType) ?? [],
+      !!user.is_anonymous,
+      new Date(user.created_at),
+      user.last_sign_in_at ? new Date(user.last_sign_in_at!) : undefined,
+    );
+  }
 
   async signInWithApple(): Promise<void> {
     // Implementation for signing in with Apple
   }
 
   async signInWithGoogle(): Promise<void> {
-    const { idToken, accessToken } = await authorize(OAuthConfig.GOOGLE);
-    await this.supabase.auth.signInWithIdToken({
-      provider: 'google',
-      token: idToken,
-      access_token: accessToken,
-    });
+    try {
+      const { idToken, accessToken } = await authorize(OAuthConfig.GOOGLE);
+      const { data, error } = await this.supabase.auth.signInWithIdToken({
+        provider: 'google',
+        token: idToken,
+        access_token: accessToken,
+      });
+      // TODO: error のエラーハンドリングする
+    } catch (error) {
+      // TODO: エラーハンドリングする
+    }
   }
 
   async signInWithX(): Promise<void> {

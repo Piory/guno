@@ -23,7 +23,7 @@
       "groupName": "Jest",
       "matchPackageNames": [
         "@types/jest",
-        "jest",
+        "/^jest/",
         "ts-jest"
       ]
     },
