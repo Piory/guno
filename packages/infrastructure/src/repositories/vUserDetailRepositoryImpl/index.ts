@@ -1,6 +1,5 @@
 import { SupabaseClient } from '@supabase/supabase-js';
-import { Database, VUserDetails } from '@core/domain';
-import { VUserDetailRepository } from '@core/domain/src/repositories/vUserDetailRepository.ts';
+import { Database, VUserDetailRepository, VUserDetails } from '@core/domain';
 
 export class VUserDetailRepositoryImpl implements VUserDetailRepository {
   constructor(private readonly supabase: SupabaseClient<Database>) {}
@@ -11,7 +10,7 @@ export class VUserDetailRepositoryImpl implements VUserDetailRepository {
   }
 
   async findByScreenName(screenName: string): Promise<VUserDetails | undefined> {
-    const { data } = await this.supabase.from('v_user_details').select().eq('screen_name', screenName).single();
+    const { data } = await this.supabase.from('v_user_details').select().eq('screen_name', screenName).maybeSingle();
     return data ?? undefined;
   }
 }

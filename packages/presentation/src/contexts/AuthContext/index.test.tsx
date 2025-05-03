@@ -15,11 +15,6 @@ jest.mock('@core/infrastructure', () => {
     __esModule: true,
     authRepository: {
       onAuthStateChange: mockOnAuthStateChange,
-      // onAuthStateChange: (cb: (evt: AuthStatus, uid: string | undefined) => void) => {
-      //   console.log('AuthRepository#onAuthStateChange');
-      //   cb('SIGNED_IN', 'uid');
-      //   return () => {};
-      // },
     },
     mockOnAuthStateChange: mockOnAuthStateChange,
   };
@@ -50,7 +45,7 @@ const wrapper: React.FC<PropsWithChildren> = ({ children }) => (
   </UseCaseProvider>
 );
 
-describe('AuthProvider', () => {
+describe('<AuthProvider/>', () => {
   const userId = faker.string.uuid();
 
   beforeEach(() => {

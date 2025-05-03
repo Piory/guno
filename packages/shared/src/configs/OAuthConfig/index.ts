@@ -1,5 +1,5 @@
 import { AuthConfiguration } from 'react-native-app-auth';
-import { Config } from 'react-native-config';
+import Config from 'react-native-config';
 
 export class OAuthConfig {
   static readonly GOOGLE_OAUTH_REDIRECT_URL = `${Config.GOOGLE_OAUTH_URL_SCHEME}:/${Config.OAUTH_REDIRECT_URL_PATH}`;

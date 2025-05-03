@@ -3,7 +3,7 @@ import { authRepository } from '@core/infrastructure';
 import { AuthProviderType } from '@core/domain';
 import { useUseCases } from '../UseCaseContext';
 
-export interface Props {
+interface Props {
   userId: string | undefined;
   signIn: (provider: AuthProviderType) => Promise<void>;
   signOut: () => Promise<void>;
