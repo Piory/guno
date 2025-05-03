@@ -1,3 +1,4 @@
+/* eslint react-native/no-color-literals: 0 */
 import React from 'react';
 import { StyleSheet, useColorScheme } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

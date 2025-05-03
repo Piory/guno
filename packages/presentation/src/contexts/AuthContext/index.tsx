@@ -22,7 +22,7 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
       setUserId(userId);
       setLoading(false);
     })();
-    return authRepository.onAuthStateChange((status, userId) => {
+    return authRepository.onAuthStateChange((_, userId) => {
       setUserId(userId);
       setLoading(false);
     });

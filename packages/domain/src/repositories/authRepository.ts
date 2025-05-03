@@ -5,17 +5,17 @@ export interface AuthRepository {
 
   getCurrentUserId(): Promise<string | undefined>;
 
-  signInWithApple(): Promise<any>;
+  signInWithApple(): Promise<void>;
 
-  signInWithGoogle(): Promise<any>;
+  signInWithGoogle(): Promise<void>;
 
-  signInWithX(): Promise<any>;
+  signInWithX(): Promise<void>;
 
-  signInWithTwitch(): Promise<any>;
+  signInWithTwitch(): Promise<void>;
 
-  signInWithDiscord(): Promise<any>;
+  signInWithDiscord(): Promise<void>;
 
-  signInWithAnonymous(): Promise<any>;
+  signInWithAnonymous(): Promise<void>;
 
-  signOut(): Promise<any>;
+  signOut(): Promise<void>;
 }

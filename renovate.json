@@ -28,6 +28,22 @@
       ]
     },
     {
+      "groupName": "ESLint",
+      "matchPackageNames": [
+        "types-eslint",
+        "/^@typescript-eslint/",
+        "/^@eslint/",
+        "/^eslint/"
+      ]
+    },
+    {
+      "groupName": "Prettier",
+      "matchPackageNames": [
+        "@trivago/prettier-plugin-sort-imports",
+        "/^prettier/"
+      ]
+    },
+    {
       "groupName": "React Native",
       "matchPackageNames": [
         "@types/react",
