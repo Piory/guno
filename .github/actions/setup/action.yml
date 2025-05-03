@@ -1,0 +1,26 @@
+inputs:
+  node-version:
+    required: false
+    default: 22.15.0
+  pnpm-version:
+    required: false
+    default: 10.10.0
+
+name: Setup
+description: Setup
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v4
+      name: Install pnpm
+      with:
+        version: ${{ inputs.pnpm-version }}
+        run_install: false
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: 'pnpm'
+    - name: Install dependencies
+      shell: bash
+      run: pnpm i

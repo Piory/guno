@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - '**'
+    types: [ synchronize, opened, reopened, ready_for_review ]
+  push:
+    branches:
+      - main
+
+env:
+  TZ: Asia/Tokyo
+#  SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+#  SUPABASE_AUTH_EXTERNAL_X_CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
+#  SUPABASE_AUTH_EXTERNAL_X_SECRET: ${{ secrets.X_SECRET }}
+#  SUPABASE_AUTH_EXTERNAL_TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+#  SUPABASE_AUTH_EXTERNAL_TWITCH_SECRET: ${{ secrets.TWITCH_SECRET }}
+#  SUPABASE_AUTH_EXTERNAL_DISCORD_CLIENT_ID: ${{ secrets.DISCORD_CLIENT_ID }}
+#  SUPABASE_AUTH_EXTERNAL_DISCORD_SECRET: ${{ secrets.DISCORD_SECRET }}
+
+jobs:
+  test:
+    name: Unit test
+    runs-on: ubuntu-latest
+    environment:
+      name: Develop
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Run test
+        run: pnpm test
+#  rls_test:
+#    name: Run row level security test
+#    runs-on: macos-latest
+#    environment:
+#      name: Develop
+#    timeout-minutes: 30
+#    steps:
+#      - uses: actions/checkout@v4
+#      - name: Setup Flutter
+#        uses: ./.github/actions/setup-flutter
+#        with:
+#          google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
+#      - uses: supabase/setup-cli@v1
+#      - run: supabase start
+#      - name: Run row level security test
+#        run: melos rls-test
+#  postgres_function_test:
+#    name: Run postgres function test
+#    runs-on: macos-latest
+#    environment:
+#      name: Develop
+#    timeout-minutes: 30
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: supabase/setup-cli@v1
+#      - run: supabase start
+#      - run: supabase db start
+#      - name: Run postgres function test
+#        run: supabase test db
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    environment:
+      name: Develop
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Run lint
+        run: pnpm lint
