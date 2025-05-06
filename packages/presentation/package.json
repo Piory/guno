@@ -19,7 +19,7 @@
     "@tamagui/themes": "1.126.4",
     "burnt": "0.13.0",
     "i18next": "25.0.2",
-    "react": "19.0.0",
+    "react": "19.1.0",
     "react-i18next": "15.5.1",
     "solito": "4.4.1",
     "tamagui": "1.126.4"
@@ -28,19 +28,19 @@
     "@babel/core": "7.27.1",
     "@babel/preset-env": "7.27.1",
     "@babel/runtime": "7.27.1",
-    "@react-native/babel-preset": "0.78.2",
-    "@react-native/typescript-config": "0.78.2",
+    "@react-native/babel-preset": "0.79.2",
+    "@react-native/typescript-config": "0.79.2",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
     "@testing-library/react-hooks": "8.0.1",
     "@testing-library/react-native": "13.2.0",
-    "@types/react": "19.1.1",
-    "@types/react-test-renderer": "19.0.0",
+    "@types/react": "19.1.3",
+    "@types/react-test-renderer": "19.1.0",
     "babel-plugin-module-resolver": "5.0.2",
     "jest-environment-jsdom": "29.7.0",
-    "react-dom": "19.0.0",
+    "react-dom": "19.1.0",
     "react-native-svg-transformer": "1.5.1",
     "react-native-web": "0.20.0",
-    "react-test-renderer": "19.0.0"
+    "react-test-renderer": "19.1.0"
   }
 }
