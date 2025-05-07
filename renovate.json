@@ -20,6 +20,16 @@
   "prConcurrentLimit": 10,
   "packageRules": [
     {
+      "groupName": "Node",
+      "matchPackageNames": [
+        "node",
+        "npm",
+        "pnpm",
+        "yarn"
+      ],
+      "automerge": false
+    },
+    {
       "groupName": "Jest",
       "matchPackageNames": [
         "@types/jest",
