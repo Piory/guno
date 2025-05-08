@@ -54,15 +54,19 @@
       ]
     },
     {
-      "groupName": "React Native",
+      "groupName": "React & React-DOM",
       "matchPackageNames": [
-        "@types/react",
-        "@types/react-test-renderer",
         "react",
         "react-dom",
-        "react-test-renderer",
-        "react-native"
+        "@types/react"
       ],
+      "extractVersion": "peerDependencies.react",
+      "sourcePackage": "react-native",
+      "automerge": false
+    },
+    {
+      "groupName": "React Native",
+      "matchPackageNames": ["react-native"],
       "automerge": false
     },
     {
