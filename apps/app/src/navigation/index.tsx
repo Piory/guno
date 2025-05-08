@@ -1,4 +1,5 @@
 import React from 'react';
+import BootSplash from 'react-native-bootsplash';
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from 'tamagui';
@@ -15,10 +16,9 @@ const Stack = createNativeStackNavigator<{
 
 type Props = {
   theme: 'light' | 'dark';
-  onReady?: () => void;
 };
 
-export const Navigation: React.FC<Props> = ({ theme, onReady }) => {
+export const Navigation: React.FC<Props> = ({ theme }) => {
   const { userId } = useAuth();
   const { background, color, primary } = useTheme();
   const navigationTheme = theme === 'dark' ? DarkTheme : DefaultTheme;
@@ -37,7 +37,7 @@ export const Navigation: React.FC<Props> = ({ theme, onReady }) => {
   return (
     <>
       <NavigationContainer
-        onReady={onReady}
+        onReady={() => BootSplash.hide()}
         theme={navTheme}
         linking={{
           prefixes: [`${AppConfig.APP_ID}://`, AppConfig.WEB_URL],
