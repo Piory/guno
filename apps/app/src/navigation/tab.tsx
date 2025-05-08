@@ -2,14 +2,14 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home, User } from '@tamagui/lucide-icons';
 import { HomeScreen, ProfileScreen } from '../screens';
-import { BottomTabBar } from './BottomTabBar';
+import { BottomTabBar } from '../layouts/BottomTabBar';
 
 const Tab = createBottomTabNavigator<{
   HomeTab: undefined;
   ProfileTab: undefined;
 }>();
 
-export const HomeTabs: React.FC = () => {
+export const Tabs: React.FC = () => {
   return (
     <>
       <Tab.Navigator tabBar={props => <BottomTabBar {...props} />}>

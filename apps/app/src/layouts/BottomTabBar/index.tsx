@@ -7,6 +7,7 @@ import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { PlatformPressable } from '@react-navigation/elements';
 import { useLinkBuilder, useTheme } from '@react-navigation/native';
 
+
 const styles = StyleSheet.create({
   tabBar: {
     position: 'absolute',

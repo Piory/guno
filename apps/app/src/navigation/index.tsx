@@ -6,11 +6,11 @@ import { useTheme } from 'tamagui';
 import { AppConfig } from '@core/shared';
 import { useAuth } from '@core/presentation';
 import { NotFoundScreen, SignInScreen } from '../screens';
-import { HomeTabs } from '../tabs';
+import { Tabs } from './tab.tsx';
 
 const Stack = createNativeStackNavigator<{
   SignIn: undefined;
-  Home: undefined;
+  SignedIn: undefined;
   NotFound: undefined;
 }>();
 
@@ -56,12 +56,12 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
         }}
       >
         <Stack.Navigator
-          initialRouteName={userId ? 'Home' : 'SignIn'}
+          initialRouteName={userId ? 'SignedIn' : 'SignIn'}
           screenOptions={{
             headerShown: false,
           }}
         >
-          {userId ? <Stack.Screen name='Home' component={HomeTabs} /> : <Stack.Screen name='SignIn' component={SignInScreen} />}
+          {userId ? <Stack.Screen name='SignedIn' component={Tabs} /> : <Stack.Screen name='SignIn' component={SignInScreen} />}
           <Stack.Screen name='NotFound' component={NotFoundScreen} />
         </Stack.Navigator>
       </NavigationContainer>
