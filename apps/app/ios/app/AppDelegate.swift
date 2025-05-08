@@ -1,8 +1,8 @@
 import AppAuth
-import React
-import ReactAppDependencyProvider
-import React_RCTAppDelegate
 import UIKit
+import React
+import React_RCTAppDelegate
+import ReactAppDependencyProvider
 
 @main
 class AppDelegate: RCTAppDelegate, RNAppAuthAuthorizationFlowManager {
