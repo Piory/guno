@@ -61,8 +61,7 @@
         "react",
         "react-dom",
         "react-test-renderer",
-        "react-native",
-        "/^@react-native/"
+        "react-native"
       ],
       "automerge": false
     },
