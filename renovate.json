@@ -18,6 +18,10 @@
   },
   "prHourlyLimit": 10,
   "prConcurrentLimit": 10,
+  "ignoreDeps": [
+    "react",
+    "react-dom",
+  ],
   "packageRules": [
     {
       "groupName": "Node",
@@ -55,14 +59,7 @@
     },
     {
       "groupName": "React Native",
-      "matchPackageNames": [
-        "@types/react",
-        "@types/react-test-renderer",
-        "react",
-        "react-dom",
-        "react-test-renderer",
-        "react-native"
-      ],
+      "matchPackageNames": ["react-native"],
       "automerge": false
     },
     {
