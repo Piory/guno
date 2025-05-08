@@ -3,6 +3,7 @@ import UIKit
 import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
+import RNBootSplash
 
 @main
 class AppDelegate: RCTAppDelegate, RNAppAuthAuthorizationFlowManager {
@@ -41,5 +42,10 @@ class AppDelegate: RCTAppDelegate, RNAppAuthAuthorizationFlowManager {
 			return true
 		}
 		return RCTLinkingManager.application(app, open: url, options: options)
+	}
+
+	override func customize(_ rootView: RCTRootView) {
+		super.customize(rootView)
+		RNBootSplash.initWithStoryboard("BootSplash", rootView: rootView)
 	}
 }

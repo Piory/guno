@@ -12,7 +12,8 @@
     "ios:dev": "ENVFILE=./env/.env.development react-native run-ios --port 3000 --device \"Piory iPhone\"",
     "lint": "eslint .",
     "start": "react-native start --port 3000",
-    "test": "jest"
+    "test": "jest",
+    "gen-splash": "react-native-bootsplash generate ./assets/svgs/logo.svg --platforms=android,ios,web --background=0B0D10 --logo-width=100 --assets-output=./assets/bootsplash --flavor=main --html=./public/index.html"
   },
   "dependencies": {
     "@core/presentation": "workspace:*",
@@ -28,6 +29,7 @@
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-native-app-auth": "8.0.2",
+    "react-native-bootsplash": "6.3.7",
     "react-native-config": "1.5.5",
     "react-native-localize": "3.4.1",
     "react-native-safe-area-context": "5.4.0",

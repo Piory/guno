@@ -13,6 +13,8 @@
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9433EBC7AFD2CDDBF6C709C0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		9D6C6B04B4F147FA916307D7 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE78A31A3245D481C01D29 /* BootSplash.storyboard */; };
+		7E5EE9CF40364E189CBA30BC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB05FD9F53AA45019FA0EC01 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = app/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = app/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		3BBE78A31A3245D481C01D29 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "app/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BB05FD9F53AA45019FA0EC01 /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "app/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				3F7FFD192DAA1ED600620CC3 /* app-Bridging-Header.h */,
+				3BBE78A31A3245D481C01D29 /* BootSplash.storyboard */,
+				BB05FD9F53AA45019FA0EC01 /* Colors.xcassets */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -167,6 +173,8 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				9433EBC7AFD2CDDBF6C709C0 /* PrivacyInfo.xcprivacy in Resources */,
+				9D6C6B04B4F147FA916307D7 /* BootSplash.storyboard in Resources */,
+				7E5EE9CF40364E189CBA30BC /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
