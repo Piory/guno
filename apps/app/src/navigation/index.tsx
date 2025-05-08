@@ -15,9 +15,10 @@ const Stack = createNativeStackNavigator<{
 
 type Props = {
   theme: 'light' | 'dark';
+  onReady?: () => void;
 };
 
-export const Navigation: React.FC<Props> = ({ theme }) => {
+export const Navigation: React.FC<Props> = ({ theme, onReady }) => {
   const { userId } = useAuth();
   const { background, color, primary } = useTheme();
   const navigationTheme = theme === 'dark' ? DarkTheme : DefaultTheme;
@@ -36,6 +37,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
   return (
     <>
       <NavigationContainer
+        onReady={onReady}
         theme={navTheme}
         linking={{
           prefixes: [`${AppConfig.APP_ID}://`, AppConfig.WEB_URL],
