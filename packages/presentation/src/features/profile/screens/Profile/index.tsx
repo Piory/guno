@@ -7,7 +7,7 @@ import { useAuth } from '../../../../contexts';
 export const Profile: React.FC = () => {
   const { t } = useTranslation();
   const { signOut } = useAuth();
-  const { subtle, color } = useTheme();
+  const { subtle } = useTheme();
   const StaticButton = styled(Button, {
     borderRadius: '$6',
     borderColor: subtle?.get(),
@@ -29,7 +29,7 @@ export const Profile: React.FC = () => {
         <CollapsibleHeader>
           <XStack justifyContent='center' alignItems='center' height='100%' width='100%'>
             <YStack justifyContent='center' alignItems='center' width='100%'>
-              <H1>{'Profile'}</H1>
+              <H1>{h1}</H1>
             </YStack>
           </XStack>
         </CollapsibleHeader>

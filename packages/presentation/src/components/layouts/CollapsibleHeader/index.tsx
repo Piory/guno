@@ -2,8 +2,7 @@ import React from 'react';
 import { StyleSheet, View, useColorScheme } from 'react-native';
 import Animated, { Extrapolation, SharedValue, interpolate, useAnimatedStyle } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { BlurView, VibrancyView } from '@react-native-community/blur';
-
+import { BlurView } from '@react-native-community/blur';
 
 export const DEFAULT_HEADER_HEIGHT = 96;
 
