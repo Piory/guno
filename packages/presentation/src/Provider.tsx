@@ -3,9 +3,10 @@ import { TamaguiProvider } from 'tamagui';
 import config from '../tamagui.config.ts';
 import { AuthProvider, UseCaseProvider } from './contexts';
 import './locales/config/index.ts';
+import { Theme } from './types/theme';
 
 type Props = {
-  theme: 'light' | 'dark';
+  theme: Theme;
 };
 
 export const Provider: React.FC<PropsWithChildren<Props>> = ({ children, theme }) => {

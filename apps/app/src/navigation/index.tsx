@@ -4,9 +4,9 @@ import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from 'tamagui';
 import { AppConfig } from '@core/shared';
-import { useAuth } from '@core/presentation';
+import { Theme, useAuth } from '@core/presentation';
 import { NotFoundScreen, SignInScreen } from '../screens';
-import { Tabs } from './tab.tsx';
+import { BottomTabs } from './BottomTabs';
 
 const Stack = createNativeStackNavigator<{
   SignIn: undefined;
@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator<{
 }>();
 
 type Props = {
-  theme: 'light' | 'dark';
+  theme: Theme;
 };
 
 export const Navigation: React.FC<Props> = ({ theme }) => {
@@ -61,7 +61,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
             headerShown: false,
           }}
         >
-          {userId ? <Stack.Screen name='SignedIn' component={Tabs} /> : <Stack.Screen name='SignIn' component={SignInScreen} />}
+          {userId ? <Stack.Screen name='SignedIn' component={BottomTabs} /> : <Stack.Screen name='SignIn' component={SignInScreen} />}
           <Stack.Screen name='NotFound' component={NotFoundScreen} />
         </Stack.Navigator>
       </NavigationContainer>

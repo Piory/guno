@@ -20,5 +20,4 @@ export const UseCaseProvider: React.FC<ProviderProps> = ({ container = {}, child
   return <UseCaseContext.Provider value={value}>{children}</UseCaseContext.Provider>;
 };
 
-// カスタムフック
 export const useUseCases = () => useContext(UseCaseContext);

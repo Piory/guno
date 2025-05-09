@@ -1,71 +1,83 @@
-import React from 'react';
-import { H1, ScrollView, Text, YStack } from 'tamagui';
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
+import Animated, { useAnimatedScrollHandler, useSharedValue } from 'react-native-reanimated';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { FlashList } from '@shopify/flash-list';
+import { Plus } from '@tamagui/lucide-icons';
+import { H2, View, XStack, YStack } from 'tamagui';
+import Logo from '../../../../../assets/svgs/logo.svg';
+import { CollapsibleHeader, DEFAULT_HEADER_HEIGHT } from '../../../../components/layouts';
+
+const AnimatedFlashList = Animated.createAnimatedComponent(FlashList);
 
 export const Home: React.FC = () => {
-  const h1 = 'Home Screen';
-  const text = 'Welcome to the Home Screen!';
+  const scrollY = useSharedValue(0);
+  const translateY = useSharedValue(0);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const { top } = useSafeAreaInsets();
+
+  const scrollHandler = useAnimatedScrollHandler({
+    onScroll: event => {
+      const dy = event.contentOffset.y - scrollY.value;
+      scrollY.value = event.contentOffset.y;
+      if (dy < 0 || scrollY.value <= 0) {
+        // 上スクロール or スクロール位置が0 → ヘッダーを隠す
+        translateY.value = Math.min(0, translateY.value + Math.abs(dy));
+      } else {
+        // 下スクロール → ヘッダーを表示
+        translateY.value = Math.max(-DEFAULT_HEADER_HEIGHT, translateY.value - Math.abs(dy));
+      }
+    },
+  });
+
+  const data = Array.from({ length: 30 }).map((_, i) => ({ key: String(i), title: `Item ${i}` }));
+
   return (
-    <>
-      <ScrollView>
-        <YStack gap='$4'>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
+    <View flex={1}>
+      {/* 折りたたみヘッダー */}
+      <CollapsibleHeader translateY={translateY}>
+        <XStack justifyContent='space-between' alignItems='center' width='100%' height='100%' paddingHorizontal={16}>
+          <YStack>
+            <Plus color='white' />
           </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
+          <YStack>
+            <Logo width={36} height={36} />
           </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
+          <YStack>
+            <Plus color='white' />
           </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-          <YStack alignItems='center' justifyContent='center'>
-            <H1>{h1}</H1>
-            <Text>{text}</Text>
-          </YStack>
-        </YStack>
-      </ScrollView>
-    </>
+        </XStack>
+      </CollapsibleHeader>
+      <AnimatedFlashList
+        data={data}
+        renderItem={({ item }) => (
+          <View style={styles.item}>
+            <H2>{item.title}</H2>
+          </View>
+        )}
+        estimatedItemSize={100}
+        refreshing={isRefreshing}
+        onRefresh={() => {
+          setIsRefreshing(true);
+          setTimeout(() => {
+            // setState(prev => prev + 1);
+            setIsRefreshing(false);
+          }, 2000);
+        }}
+        onScroll={scrollHandler}
+        scrollEventThrottle={16}
+        progressViewOffset={DEFAULT_HEADER_HEIGHT}
+        contentContainerStyle={{ paddingTop: DEFAULT_HEADER_HEIGHT }}
+        scrollIndicatorInsets={{ top: DEFAULT_HEADER_HEIGHT - top, bottom: 0 }}
+      />
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  item: {
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
