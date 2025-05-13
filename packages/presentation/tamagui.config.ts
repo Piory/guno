@@ -29,7 +29,7 @@ const customTokens = createTokens({
 
     // —— Border -----------------------------------------------------------
     borderLight: '#C6CCD6',
-    borderDark: '#404650',
+    borderDark: '#1C2023',
 
     // —— Semantic states --------------------------------------------------
     success: '#42E38D',

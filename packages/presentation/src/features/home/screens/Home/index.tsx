@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
 import Animated, { useAnimatedScrollHandler, useSharedValue } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FlashList } from '@shopify/flash-list';
 import { Plus } from '@tamagui/lucide-icons';
-import { H2, View, XStack, YStack } from 'tamagui';
+import { Separator, Spacer, View, XStack, YStack } from 'tamagui';
 import Logo from '../../../../../assets/svgs/logo.svg';
+import { PostCard } from '../../../../components/elements/cards';
 import { CollapsibleHeader, DEFAULT_HEADER_HEIGHT } from '../../../../components/layouts';
 
 const AnimatedFlashList = Animated.createAnimatedComponent(FlashList);
@@ -50,11 +50,9 @@ export const Home: React.FC = () => {
       </CollapsibleHeader>
       <AnimatedFlashList
         data={data}
-        renderItem={({ item }) => (
-          <View style={styles.item}>
-            <H2>{item.title}</H2>
-          </View>
-        )}
+        renderItem={({}) => <PostCard />}
+        ListFooterComponent={() => <Spacer size='$16' />}
+        ItemSeparatorComponent={() => <Separator />}
         estimatedItemSize={100}
         refreshing={isRefreshing}
         onRefresh={() => {
@@ -73,11 +71,3 @@ export const Home: React.FC = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  item: {
-    height: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
