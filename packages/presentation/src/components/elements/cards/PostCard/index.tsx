@@ -1,58 +1,64 @@
 import React from 'react';
-import { MessageSquare, MoreHorizontal, Repeat, Star } from '@tamagui/lucide-icons';
-import { Avatar, Text, XStack, YStack } from 'tamagui';
+import { MessageSquare, MoreHorizontal, Repeat, Share, Star } from '@tamagui/lucide-icons';
+import { Avatar, Spacer, Text, XStack, YStack } from 'tamagui';
+
+const iconSize = 16;
 
 export const PostCard: React.FC = () => {
   return (
     <>
-      <XStack flex={1} gap='$3' paddingHorizontal='$3' paddingTop='$2' paddingBottom='$3'>
-        <YStack paddingTop='$1.5'>
-          <Avatar circular size='$3'>
-            <Avatar.Image src='https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80' />
-            <Avatar.Fallback backgroundColor='white' />
-          </Avatar>
-        </YStack>
-        <YStack flex={1} gap='$1.5'>
-          <YStack>
-            <XStack>
-              <XStack gap='$2' flex={1} alignItems='center'>
-                <Text fontSize='$4' fontWeight='bold'>
-                  Username
-                </Text>
-                <Text fontSize='$2' color='$subtle' textAlign='center'>
+      <XStack flex={1} gap='$3' paddingHorizontal='$3' paddingVertical='$2.5'>
+        <Avatar circular size='$3' marginTop='$1.5'>
+          <Avatar.Image src='https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80' />
+          <Avatar.Fallback backgroundColor='white' />
+        </Avatar>
+        <YStack flex={1} gap='$1'>
+          <XStack gap='$2' flex={1} alignItems='center'>
+            <XStack gap='$2' flex={1} alignItems='center'>
+              <Text ellipse>
+                <Text fontWeight='bold'>Username</Text>
+                <Spacer size='$2' />
+                <Text color='$subtle' textAlign='center'>
                   @ScreenName
                 </Text>
-                <Text fontSize='$2' color='$subtle' textAlign='center'>
-                  1時間前
-                </Text>
-                <YStack flex={1} justifyContent='space-between' alignItems='flex-end'>
-                  <MoreHorizontal size='$1' color='$subtle' />
-                </YStack>
-              </XStack>
+              </Text>
             </XStack>
-          </YStack>
-          <YStack flex={1}>
+            <XStack>
+              <Text color='$subtle' textAlign='center'>
+                1時間前
+              </Text>
+            </XStack>
+            <XStack>
+              <YStack justifyContent='space-between' alignItems='flex-end'>
+                <MoreHorizontal size={20} color='$subtle' />
+              </YStack>
+            </XStack>
+          </XStack>
+          <YStack flex={1} gap='$2'>
             <Text>本文本本文本文本文本文本文本文本文本本文本本文本文本文本文本文本文本文本本文本本文本文本文本文本文本文本文本本文本本文本文本文本文本文本文本文本</Text>
-          </YStack>
-          <YStack flex={1} gap='$2' paddingTop='$2'>
-            <XStack gap='$6' flex={1} alignItems='center'>
-              <XStack gap='$2' alignItems='center'>
-                <MessageSquare size={16} color='$subtle' />
-                <Text fontSize='$4' color='$subtle'>
-                  0
+            <XStack flex={1} gap='$4' alignItems='center'>
+              <XStack flex={3} gap='$1.5' alignItems='center'>
+                <MessageSquare size={iconSize} color='$subtle' />
+                <Text color='$subtle' fontSize='$3.5'>
+                  1000万
                 </Text>
               </XStack>
-              <XStack gap='$2' alignItems='center'>
-                <Repeat size={16} color='$subtle' />
-                <Text fontSize='$4' color='$subtle'>
-                  0
+              <XStack flex={3} gap='$1.5' alignItems='center'>
+                <Repeat size={iconSize} color='$subtle' />
+                <Text fontSize='$3.5' color='$subtle'>
+                  1000万
                 </Text>
               </XStack>
-              <XStack gap='$2' alignItems='center'>
-                <Star size={16} color='$subtle' />
-                <Text fontSize='$4' color='$subtle'>
-                  0
+              <XStack flex={3} gap='$1.5' alignItems='center'>
+                <Star size={iconSize} color='$subtle' />
+                <Text fontSize='$3.5' color='$subtle'>
+                  1000万
                 </Text>
+              </XStack>
+              <XStack flex={1}>
+                <YStack flex={1} alignItems='flex-end'>
+                  <Share size={iconSize} color='$subtle' />
+                </YStack>
               </XStack>
             </XStack>
           </YStack>

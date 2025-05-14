@@ -26,7 +26,7 @@ const Header = () => {
               <YStack justifyContent='space-between'>
                 <XStack gap='$2' alignItems='center'>
                   <OutlinedButton height='$2.5' paddingHorizontal='$4' paddingVertical='$0'>
-                    <Text fontSize='$4'>編集</Text>
+                    <Text>編集</Text>
                   </OutlinedButton>
                   <View onPress={() => push('/setting')}>
                     <View padding='$2'>
@@ -42,29 +42,29 @@ const Header = () => {
               <Text fontSize='$6' color='$color' fontWeight='bold'>
                 Username
               </Text>
-              <Text fontSize='$4' color='$subtle'>
+              <Text fontSize='$5' color='$subtle'>
                 @ScreenName
               </Text>
             </YStack>
             <YStack gap='$3'>
-              <Text fontSize='$4' color='$color'>
+              <Text color='$color'>
                 自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文 自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
                 自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
               </Text>
               <XStack gap='$3'>
                 <XStack gap='$1.5'>
-                  <Text fontSize='$4' color='$color'>
-                    100万人
+                  <Text fontSize='$3.5' color='$color'>
+                    1000万人
                   </Text>
-                  <Text fontSize='$4' color='$subtle'>
+                  <Text fontSize='$3.5' color='$subtle'>
                     フォロー中
                   </Text>
                 </XStack>
                 <XStack gap='$1.5'>
-                  <Text fontSize='$4' color='$color'>
+                  <Text fontSize='$3.5' color='$color'>
                     1000万人
                   </Text>
-                  <Text fontSize='$4' color='$subtle'>
+                  <Text fontSize='$3.5' color='$subtle'>
                     フォロワー
                   </Text>
                 </XStack>
