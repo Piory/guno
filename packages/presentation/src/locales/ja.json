@@ -5,7 +5,7 @@
   "takePhoto": "写真を撮る",
   "selectFromLibrary": "ライブラリから選択",
   "deleteImage": "画像を削除",
-  "edit": "編集",
+  "EDIT": "編集",
   "editProfile": "プロフィールを編集",
   "editDisplayName": "表示名を編集",
   "editDisplayNameLength": "表示名は、{min}文字以上{max}文字以内で入力してください。",
@@ -45,8 +45,8 @@
   },
   "updateUserProfileError": "プロフィールの更新に失敗しました。",
   "share": "共有",
-  "post": "投稿",
-  "posts": "投稿",
+  "POST": "投稿",
+  "POSTS": "投稿",
   "repost": "リポスト",
   "reposted": "{displayName}さんがリポストしました",
   "@reposted": {
@@ -65,8 +65,8 @@
   "displayName": "表示名",
   "screenName": "ハンドル",
   "selfIntroduction": "自己紹介",
-  "favorite": "お気に入り",
-  "favorites": "お気に入り",
+  "FAVORITE": "お気に入り",
+  "FAVORITES": "お気に入り",
   "CANCEL": "キャンセル",
   "done": "完了",
   "save": "保存",
@@ -96,24 +96,8 @@
   "forgotYourPassword": "パスワードをお忘れですか？",
   "dontHaveAnAccount": "アカウントをお持ちでないですか？",
   "alreadyHaveAnAccount": "すでにアカウントをお持ちですか？",
-  "follow": "{follow} フォロー",
-  "@follow": {
-    "placeholders": {
-      "follow": {
-        "type": "int",
-        "format": "compact"
-      }
-    }
-  },
-  "follower": "{follower} フォロワー",
-  "@follower": {
-    "placeholders": {
-      "follower": {
-        "type": "int",
-        "format": "compact"
-      }
-    }
-  },
+  "FOLLOWS": "フォロー中",
+  "FOLLOWERS": "フォロワー",
   "uploadVideoTooLongErrorTitle": "動画の長さが長すぎます",
   "uploadVideoTooLongErrorMessage": "動画の長さは、{max}秒以内でアップロードしてください。",
   "@uploadVideoTooLongErrorMessage": {

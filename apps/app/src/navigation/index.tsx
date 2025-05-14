@@ -21,7 +21,7 @@ type Props = {
 
 export const Navigation: React.FC<Props> = ({ theme }) => {
   const { userId } = useAuth();
-  const { background, color, primary } = useTheme();
+  const { background, color, secondary } = useTheme();
   const navigationTheme = theme === 'dark' ? DarkTheme : DefaultTheme;
   const navTheme = {
     ...navigationTheme,
@@ -29,13 +29,12 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
       ...navigationTheme.colors,
       background: background?.val,
       text: color?.val,
-      primary: primary?.val,
+      primary: secondary?.val,
       // card: theme.background?.get(),
       border: background?.val,
       // notification: theme.notification?.get(),
     },
   };
-  console.log(`userId: ${userId}`);
   return (
     <>
       <NavigationContainer

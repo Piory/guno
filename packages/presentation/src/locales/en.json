@@ -5,7 +5,7 @@
   "takePhoto": "Take a photo",
   "selectFromLibrary": "Select from library",
   "deleteImage": "Delete image",
-  "edit": "Edit",
+  "EDIT": "Edit",
   "editProfile": "Edit profile",
   "editDisplayName": "Edit display name",
   "editDisplayNameLength": "Display name must be between {min} and {max} characters.",
@@ -45,8 +45,8 @@
   },
   "updateUserProfileError": "Failed to update profile.",
   "share": "Share",
-  "post": "Post",
-  "posts": "Posts",
+  "POST": "Post",
+  "POSTS": "Posts",
   "repost": "Repost",
   "reposted": "{displayName} reposted",
   "@reposted": {
@@ -65,8 +65,8 @@
   "displayName": "Display name",
   "screenName": "Handle",
   "selfIntroduction": "Self-introduction",
-  "favorite": "Favorite",
-  "favorites": "Favorites",
+  "FAVORITE": "Favorite",
+  "FAVORITES": "Favorites",
   "CANCEL": "Cancel",
   "done": "Done",
   "save": "Save",
@@ -96,24 +96,8 @@
   "forgotYourPassword": "Forgot your password?",
   "dontHaveAnAccount": "Don't have an account?",
   "alreadyHaveAnAccount": "Already have an account?",
-  "follow": "{follow} Followers",
-  "@follow": {
-    "placeholders": {
-      "follow": {
-        "type": "int",
-        "format": "compact"
-      }
-    }
-  },
-  "follower": "{follower} Followers",
-  "@follower": {
-    "placeholders": {
-      "follower": {
-        "type": "int",
-        "format": "compact"
-      }
-    }
-  },
+  "FOLLOWS": "Follows",
+  "FOLLOWERS": "Followers",
   "uploadVideoTooLongErrorTitle": "Video is too long",
   "uploadVideoTooLongErrorMessage": "Please upload the video within {max} seconds.",
   "@uploadVideoTooLongErrorMessage": {

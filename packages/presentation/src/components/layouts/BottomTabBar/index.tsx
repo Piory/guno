@@ -12,22 +12,10 @@ export const BottomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
   const blurType = useColorScheme() === 'dark' ? 'dark' : 'xlight';
   const { colors } = useTheme();
   const { buildHref } = useLinkBuilder();
-  const RADIUS = 35;
 
   return (
     <View style={[styles.container, { bottom }]}>
-      <BlurView
-        style={[
-          StyleSheet.absoluteFill,
-          {
-            borderRadius: RADIUS,
-            overflow: 'hidden',
-          },
-        ]}
-        blurType={blurType}
-        blurAmount={4}
-        reducedTransparencyFallbackColor={colors.background}
-      />
+      <BlurView style={[StyleSheet.absoluteFill, styles.blurView]} blurType={blurType} blurAmount={4} reducedTransparencyFallbackColor={colors.background} />
 
       <XStack width='100%' justifyContent='space-between' alignItems='center'>
         {state.routes.map((route, index) => {
@@ -60,7 +48,7 @@ export const BottomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
                 testID={options.tabBarButtonTestID}
                 onPress={onPress}
                 onLongPress={onLongPress}
-                style={styles.tabBarItem}
+                style={styles.bottomTabBarItem}
               >
                 {options.tabBarIcon!({
                   focused: isFocused,
@@ -81,7 +69,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     marginHorizontal: 96,
   },
-  tabBarItem: {
+  blurView: {
+    borderRadius: 35,
+    overflow: 'hidden',
+  },
+  bottomTabBarItem: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

@@ -8,36 +8,40 @@ const customTokens = createTokens({
   zIndex: tokens.zIndex,
   radius: tokens.radius,
   color: {
-    // —— Brand primaries --------------------------------------------------
-    primary: '#A95AFF', // Violet 500
-    primary300: '#CBA2FF', // Hover / focus
-    primary700: '#8138E4', // Pressed / dark-fg
+    // Primary
+    primary: '#91A3FF',
+    primary300: '#B9C4FF',
+    primary700: '#6475D1',
 
-    cyan: '#47D8DC', // Cyan 500
-    cyan300: '#80E7EA', // Hover / focus
-    cyan700: '#1AA9AC', // Pressed / dark-fg
+    // Secondary (violet)
+    secondary: '#A95AFF',
+    secondary300: '#CBA2FF',
+    secondary700: '#8138E4',
 
-    // —— Neutrals ---------------------------------------------------------
+    // Accent (cyan)
+    accent: '#47D8DC',
+    accent300: '#80E7EA',
+    accent700: '#1AA9AC',
+
+    // Neutrals
     neutral100: '#FFFFFF',
     neutral200: '#F2F4F7',
     neutral700: '#1A1D23',
     neutral900: '#0B0D10',
 
-    // —— Subtle text ------------------------------------------------------
+    // Border & subtle
+    borderLight: '#C6CCD6',
+    borderDark: '#1C2023',
     textSubtleLight: '#6C7380',
     textSubtleDark: '#6C7380',
 
-    // —— Border -----------------------------------------------------------
-    borderLight: '#C6CCD6',
-    borderDark: '#1C2023',
-
-    // —— Semantic states --------------------------------------------------
+    // Semantic
     success: '#42E38D',
     warning: '#FFB020',
     danger: '#FF4B6E',
 
-    // —— Gradient shortcut -----------------------------------------------
-    brandGradient: 'linear-gradient(130deg,#A95AFF 25%, #91A3FF 50%, #47D8DC 75%)',
+    // Brand gradient
+    brandGradient: 'linear-gradient(130deg,#A95AFF 0%,#91A3FF 50%,#47D8DC 100%)',
   },
 });
 
@@ -56,9 +60,14 @@ const config = createTamagui({
       color: customTokens.color.neutral900,
       // brand accents
       primary: customTokens.color.primary,
-      primaryHover: customTokens.color.primary300,
-      primaryPress: customTokens.color.primary700,
-      accent: customTokens.color.cyan,
+      primary300: customTokens.color.primary300,
+      primary700: customTokens.color.primary700,
+      secondary: customTokens.color.secondary,
+      secondary300: customTokens.color.secondary300,
+      secondary700: customTokens.color.secondary700,
+      accent: customTokens.color.accent,
+      accent300: customTokens.color.accent300,
+      accent700: customTokens.color.accent700,
       // borderColor
       borderColor: customTokens.color.borderLight,
       subtle: customTokens.color.textSubtleLight,
@@ -73,9 +82,14 @@ const config = createTamagui({
       color: customTokens.color.neutral100,
       // brand accents
       primary: customTokens.color.primary,
-      primaryHover: customTokens.color.primary300,
-      primaryPress: customTokens.color.primary700,
-      accent: customTokens.color.cyan,
+      primary300: customTokens.color.primary300,
+      primary700: customTokens.color.primary700,
+      secondary: customTokens.color.secondary,
+      secondary300: customTokens.color.secondary300,
+      secondary700: customTokens.color.secondary700,
+      accent: customTokens.color.accent,
+      accent300: customTokens.color.accent300,
+      accent700: customTokens.color.accent700,
       // borderColor
       borderColor: customTokens.color.borderDark,
       subtle: customTokens.color.textSubtleDark,
