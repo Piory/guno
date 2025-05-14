@@ -1,7 +1,7 @@
-import { defaultConfig } from '@tamagui/config/v4';
 import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { TamaguiProvider, createTamagui } from 'tamagui';
+import { TamaguiProvider } from 'tamagui';
+import config from '../../../../../../../tamagui.config.ts';
 import { SignInWithGuestButton } from './index.tsx';
 
 jest.mock('react-i18next', () => ({
@@ -30,7 +30,6 @@ jest.mock('../../../../../../contexts', () => {
 const mockSignIn = require('../../../../../../contexts').mockSignIn;
 
 describe('<SignInWithGuestButton />', () => {
-  const config = createTamagui(defaultConfig);
   const setup = () => {
     return render(
       <TamaguiProvider config={config}>

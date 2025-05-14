@@ -7,28 +7,20 @@ exports[`<SignInWithGuestButton /> 初期表示時のスナップショットが
     style="display: contents;"
   >
     <span
-      class="t_sub_theme t_Button _dsp_contents is_Theme"
+      aria-controls="content-:r1:"
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      class="is_Button _outlineStyle-0focus-visible-solid _outlineWidth-0focus-visible-2px _btc-0hover-subtle _brc-0hover-subtle _borderBottomColor-0hover-subtle _borderLeftColor-0hover-subtle _btc-0active-subtle _brc-0active-subtle _borderBottomColor-0active-subtle _borderLeftColor-0active-subtle _btc-0focus-subtle _brc-0focus-subtle _borderBottomColor-0focus-subtle _borderLeftColor-0focus-subtle _dsp-flex _items-center _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-0 _flexDirection-row _pr-t-space-tru101 _pl-t-space-tru101 _height-t-size-true _btlr-t-space-16 _btrr-t-space-16 _borderBottomRightRadius-t-space-16 _borderBottomLeftRadius-t-space-16 _justify-center _fwr-nowrap _cur-pointer _bg-background _btw-1px _brw-1px _borderBottomWidth-1px _borderLeftWidth-1px _btc-subtle _brc-subtle _borderBottomColor-subtle _borderLeftColor-subtle _borderBottomStyle-solid _borderTopStyle-solid _borderLeftStyle-solid _borderRightStyle-solid"
+      data-disable-theme="true"
+      data-state="closed"
+      role="button"
+      tabindex="0"
     >
-      <span
-        aria-controls="content-:r2:"
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="is_Button _bg-0hover-backgroundH3423444 _btc-0hover-borderColor69916956 _brc-0hover-borderColor69916956 _borderBottomColor-0hover-borderColor69916956 _borderLeftColor-0hover-borderColor69916956 _bg-0active-backgroundP3496915 _btc-0active-borderColor77378595 _brc-0active-borderColor77378595 _borderBottomColor-0active-borderColor77378595 _borderLeftColor-0active-borderColor77378595 _outlineColor-0focus-visible-outlineColo114 _outlineStyle-0focus-visible-solid _outlineWidth-0focus-visible-2px _dsp-flex _items-center _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-0 _flexDirection-row _pr-c-space-tru101 _pl-c-space-tru101 _height-c-size-true _btlr-c-radius-6 _btrr-c-radius-6 _borderBottomRightRadius-c-radius-6 _borderBottomLeftRadius-c-radius-6 _justify-center _fwr-nowrap _cur-pointer _bg-background _btw-1px _brw-1px _borderBottomWidth-1px _borderLeftWidth-1px _btc-transparent _brc-transparent _borderBottomColor-transparent _borderLeftColor-transparent _borderBottomStyle-solid _borderTopStyle-solid _borderLeftStyle-solid _borderRightStyle-solid _width-10037"
-        data-disable-theme="true"
-        data-state="closed"
-        role="button"
-        tabindex="0"
+      <p
+        class="is_Paragraph font_body _dsp-inline _bxs-border-box _ww-break-word _mt-0px _mr-0px _mb-0px _ml-0px _ff-f-family _fw-bold _ls-f-letterSpa1360334201 _fs-f-size-5 _lh-f-lineHeigh112924 _col-color _select-auto _ws-normal"
       >
-        <div
-          class="_dsp-flex _flexBasis-auto _bxs-border-box _pos-relative _minH-0px _minW-0px _shrink-0 _flexDirection-row _width-10037 _items-center _justify-center"
-        >
-          <p
-            class="is_Paragraph font_body _dsp-inline _bxs-border-box _ww-break-word _mt-0px _mr-0px _mb-0px _ml-0px _ff-f-family _fw-bold _ls-f-letterSpa1360334201 _fs-f-size-5 _lh-f-lineHeigh112924 _col-color _select-auto _ws-normal"
-          >
-            CONTINUE_WITH_GUEST
-          </p>
-        </div>
-      </span>
+        CONTINUE_WITH_GUEST
+      </p>
     </span>
     <div
       style="display: contents;"
