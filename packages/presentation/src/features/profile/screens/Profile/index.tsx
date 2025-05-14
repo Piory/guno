@@ -3,15 +3,16 @@ import { StyleSheet } from 'react-native';
 import { TabBarProps, Tabs } from 'react-native-collapsible-tab-view';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Settings } from '@tamagui/lucide-icons';
-import { Avatar, Button, Separator, Spacer, Text, View, XStack, YStack } from 'tamagui';
+import { useRouter } from 'solito/router';
+import { Avatar, Separator, Spacer, Text, View, XStack, YStack } from 'tamagui';
+import { OutlinedButton } from '../../../../components/elements/buttons';
 import { PostCard } from '../../../../components/elements/cards';
-
-const HEADER_HEIGHT = 250;
 
 const DATA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const identity = (v: unknown): string => v + '';
 
 const Header = () => {
+  const { push } = useRouter();
   return (
     <>
       <View backgroundColor='$background' paddingTop='$4' paddingBottom='$2' paddingHorizontal='$4'>
@@ -23,11 +24,15 @@ const Header = () => {
                 <Avatar.Fallback backgroundColor='white' />
               </Avatar>
               <YStack justifyContent='space-between'>
-                <XStack gap='$4' alignItems='center'>
-                  <Button paddingHorizontal='$4' paddingVertical='$0' height='$3' borderColor='$borderColor' borderWidth='$0.125' borderRadius='$12'>
+                <XStack gap='$2' alignItems='center'>
+                  <OutlinedButton height='$2.5' paddingHorizontal='$4' paddingVertical='$0'>
                     <Text fontSize='$4'>編集</Text>
-                  </Button>
-                  <Settings color='$subtle' />
+                  </OutlinedButton>
+                  <View onPress={() => push('/setting')}>
+                    <View padding='$2'>
+                      <Settings color='$color' />
+                    </View>
+                  </View>
                 </XStack>
               </YStack>
             </XStack>
@@ -42,7 +47,7 @@ const Header = () => {
               </Text>
             </YStack>
             <YStack gap='$3'>
-              <Text fontSize='$4' color='$subtle'>
+              <Text fontSize='$4' color='$color'>
                 自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文 自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
                 自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
               </Text>
@@ -118,7 +123,6 @@ export const Profile: React.FC = () => {
         headerContainerStyle={styles.headerContainer}
         renderHeader={Header}
         renderTabBar={TabBar}
-        headerHeight={HEADER_HEIGHT} // optional
         allowHeaderOverscroll
       >
         <Tabs.Tab name='A'>

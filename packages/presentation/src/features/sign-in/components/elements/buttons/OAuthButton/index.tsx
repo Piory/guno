@@ -15,7 +15,7 @@ type Props = {
 export const OAuthButton: React.FC<Props> = ({ type, icon, text, backgroundColor, borderColor, textColor }) => {
   const { signIn } = useAuth();
   const StaticButton = styled(Button, {
-    borderRadius: '$6',
+    borderRadius: '$12',
     backgroundColor: backgroundColor,
     borderColor: backgroundColor,
     hoverStyle: {

@@ -4,13 +4,14 @@ import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from 'tamagui';
 import { AppConfig } from '@core/shared';
-import { Theme, useAuth } from '@core/presentation';
+import { Setting, Theme, useAuth } from '@core/presentation';
 import { NotFoundScreen, SignInScreen } from '../screens';
 import { BottomTabs } from './BottomTabs';
 
 const Stack = createNativeStackNavigator<{
   SignIn: undefined;
   SignedIn: undefined;
+  Setting: undefined;
   NotFound: undefined;
 }>();
 
@@ -34,6 +35,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
       // notification: theme.notification?.get(),
     },
   };
+  console.log(`userId: ${userId}`);
   return (
     <>
       <NavigationContainer
@@ -50,6 +52,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
                   ProfileTab: 'profile',
                 },
               },
+              Setting: 'setting',
               NotFound: '*',
             },
           },
@@ -61,10 +64,32 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
             headerShown: false,
           }}
         >
-          {userId ? <Stack.Screen name='SignedIn' component={BottomTabs} /> : <Stack.Screen name='SignIn' component={SignInScreen} />}
+          <Stack.Group>
+            {userId ? SignedInStack() : SignInStack()}
+          </Stack.Group>
           <Stack.Screen name='NotFound' component={NotFoundScreen} />
         </Stack.Navigator>
       </NavigationContainer>
+    </>
+  );
+};
+
+const SignInStack = () => {
+  return (
+    <>
+      <Stack.Screen name='SignIn' component={SignInScreen} />
+    </>
+  );
+};
+
+
+const SignedInStack = () => {
+  return (
+    <>
+      <Stack.Screen name='SignedIn' component={BottomTabs} />
+      <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name='Setting' component={Setting} />
+      </Stack.Group>
     </>
   );
 };

@@ -25,7 +25,7 @@ const customTokens = createTokens({
 
     // —— Subtle text ------------------------------------------------------
     textSubtleLight: '#6C7380',
-    textSubtleDark: '#A0A5B0',
+    textSubtleDark: '#6C7380',
 
     // —— Border -----------------------------------------------------------
     borderLight: '#C6CCD6',

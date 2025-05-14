@@ -1,36 +1,21 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { AlertDialog, Button, Paragraph, XStack, styled, useTheme } from 'tamagui';
+import { AlertDialog, Button, Paragraph } from 'tamagui';
+import { OutlinedButton } from '../../../../../../components/elements/buttons';
 import { useAuth } from '../../../../../../contexts';
 
 export function SignInWithGuestButton(): React.JSX.Element {
   const { t } = useTranslation();
   const { signIn } = useAuth();
-  const { subtle } = useTheme();
-  const StaticButton = styled(Button, {
-    borderRadius: '$6',
-    borderColor: subtle?.get(),
-    hoverStyle: {
-      borderColor: subtle?.get(),
-    },
-    pressStyle: {
-      borderColor: subtle?.get(),
-    },
-    focusStyle: {
-      borderColor: subtle?.get(),
-    },
-  });
   const onPress = () => signIn('anonymous');
   return (
     <AlertDialog native>
       <AlertDialog.Trigger asChild>
-        <StaticButton width='100%'>
-          <XStack width='100%' alignItems='center' justifyContent='center'>
-            <Paragraph size='$5' fontWeight='bold'>
-              {t('CONTINUE_WITH_GUEST')}
-            </Paragraph>
-          </XStack>
-        </StaticButton>
+        <OutlinedButton>
+          <Paragraph size='$5' fontWeight='bold'>
+            {t('CONTINUE_WITH_GUEST')}
+          </Paragraph>
+        </OutlinedButton>
       </AlertDialog.Trigger>
       <AlertDialog.Portal>
         <AlertDialog.Overlay />
