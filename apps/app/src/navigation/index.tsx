@@ -64,9 +64,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
             headerShown: false,
           }}
         >
-          <Stack.Group>
-            {userId ? SignedInStack() : SignInStack()}
-          </Stack.Group>
+          <Stack.Group>{userId ? SignedInStack() : SignInStack()}</Stack.Group>
           <Stack.Screen name='NotFound' component={NotFoundScreen} />
         </Stack.Navigator>
       </NavigationContainer>
@@ -81,7 +79,6 @@ const SignInStack = () => {
     </>
   );
 };
-
 
 const SignedInStack = () => {
   return (

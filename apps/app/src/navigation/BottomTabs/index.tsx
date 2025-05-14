@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home, User } from '@tamagui/lucide-icons';
-import { BottomTabBar } from '../../layouts/BottomTabBar';
+import { BottomTabBar } from '@core/presentation';
 import { HomeScreen, ProfileScreen } from '../../screens';
 
 const BottomTab = createBottomTabNavigator<{
