@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { Button, Paragraph, Spacer, View, XStack, styled } from 'tamagui';
 import { AuthProviderType } from '@core/domain';
+import { LoadingDialog } from '../../../../../../components/elements/loadings';
 import { useAuth } from '../../../../../../contexts';
 
 type Props = {
@@ -13,6 +14,7 @@ type Props = {
 };
 
 export const OAuthButton: React.FC<Props> = ({ type, icon, text, backgroundColor, borderColor, textColor }) => {
+  const [loadingDialogVisible, setLoadingDialogVisible] = useState(false);
   const { signIn } = useAuth();
   const StaticButton = styled(Button, {
     borderRadius: '$12',
@@ -32,9 +34,18 @@ export const OAuthButton: React.FC<Props> = ({ type, icon, text, backgroundColor
     },
     borderWidth: '$0.125',
   });
+  const onPress = async (type: AuthProviderType) => {
+    try {
+      setLoadingDialogVisible(true);
+      await signIn(type);
+    } finally {
+      setLoadingDialogVisible(false);
+    }
+  };
   return (
     <>
-      <StaticButton borderColor={borderColor} onPress={() => signIn(type)}>
+      <LoadingDialog visible={loadingDialogVisible} />
+      <StaticButton borderColor={borderColor} onPress={() => onPress(type)}>
         <XStack flex={1} width='100%' alignItems='center' justifyContent='center'>
           <View width='24' height='24' justifyContent='center' alignItems='center'>
             {icon ?? null}
