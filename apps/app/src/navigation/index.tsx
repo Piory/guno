@@ -2,10 +2,9 @@ import React from 'react';
 import BootSplash from 'react-native-bootsplash';
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useTheme } from 'tamagui';
+import { Text, useTheme } from 'tamagui';
 import { AppConfig } from '@core/shared';
-import { Setting, Theme, useAuth } from '@core/presentation';
-import { NotFoundScreen, SignInScreen } from '../screens';
+import { Setting, SignIn, Theme, useAuth } from '@core/presentation';
 import { BottomTabs } from './BottomTabs';
 
 const Stack = createNativeStackNavigator<{
@@ -64,7 +63,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
           }}
         >
           <Stack.Group>{userId ? SignedInStack() : SignInStack()}</Stack.Group>
-          <Stack.Screen name='NotFound' component={NotFoundScreen} />
+          <Stack.Screen name='NotFound' component={() => <Text>Page Not Found</Text>} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
@@ -74,7 +73,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
 const SignInStack = () => {
   return (
     <>
-      <Stack.Screen name='SignIn' component={SignInScreen} />
+      <Stack.Screen name='SignIn' component={SignIn} />
     </>
   );
 };

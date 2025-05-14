@@ -1,8 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, User } from '@tamagui/lucide-icons';
-import { BottomTabBar } from '@core/presentation';
-import { HomeScreen, ProfileScreen } from '../../screens';
+import { Home as HomeIcon, User } from '@tamagui/lucide-icons';
+import { BottomTabBar, Home, Profile } from '@core/presentation';
 
 const BottomTab = createBottomTabNavigator<{
   HomeTab: undefined;
@@ -15,14 +14,14 @@ export const BottomTabs: React.FC = () => {
       <BottomTab.Navigator tabBar={props => <BottomTabBar {...props} />} screenOptions={{ headerShown: false }}>
         <BottomTab.Screen
           name='HomeTab'
-          component={HomeScreen}
+          component={Home}
           options={{
-            tabBarIcon: ({ color, size }) => <Home size={size} color={color} />,
+            tabBarIcon: ({ color, size }) => <HomeIcon size={size} color={color} />,
           }}
         />
         <BottomTab.Screen
           name='ProfileTab'
-          component={ProfileScreen}
+          component={Profile}
           options={{
             title: 'プロフィール',
             tabBarIcon: ({ color, size }) => <User size={size} color={color} />,
