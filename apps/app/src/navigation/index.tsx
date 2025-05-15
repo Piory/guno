@@ -4,12 +4,13 @@ import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, useTheme } from 'tamagui';
 import { AppConfig } from '@core/shared';
-import { Setting, SignIn, Theme, useAuth } from '@core/presentation';
+import { ProfileEdit, Setting, SignIn, Theme, useAuth } from '@core/presentation';
 import { BottomTabs } from './BottomTabs';
 
 const Stack = createNativeStackNavigator<{
   SignIn: undefined;
   SignedIn: undefined;
+  ProfileEdit: undefined;
   Setting: undefined;
   NotFound: undefined;
 }>();
@@ -50,6 +51,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
                   ProfileTab: 'profile',
                 },
               },
+              ProfileEdit: 'profile/edit',
               Setting: 'setting',
               NotFound: '*',
             },
@@ -63,11 +65,15 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
           }}
         >
           <Stack.Group>{userId ? SignedInStack() : SignInStack()}</Stack.Group>
-          <Stack.Screen name='NotFound' component={() => <Text>Page Not Found</Text>} />
+          <Stack.Screen name='NotFound' component={PageNotFound} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
   );
+};
+
+const PageNotFound: React.FC = () => {
+  return <Text>Page Not Found</Text>;
 };
 
 const SignInStack = () => {
@@ -83,6 +89,7 @@ const SignedInStack = () => {
     <>
       <Stack.Screen name='SignedIn' component={BottomTabs} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name='ProfileEdit' component={ProfileEdit} />
         <Stack.Screen name='Setting' component={Setting} />
       </Stack.Group>
     </>

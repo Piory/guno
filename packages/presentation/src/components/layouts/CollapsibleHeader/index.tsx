@@ -3,8 +3,7 @@ import { StyleSheet, View, useColorScheme } from 'react-native';
 import Animated, { Extrapolation, SharedValue, interpolate, useAnimatedStyle } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BlurView } from '@react-native-community/blur';
-
-export const DEFAULT_HEADER_HEIGHT = 96;
+import { DEFAULT_HEADER_HEIGHT } from '../../../configs';
 
 type Props = {
   height?: number;

@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'solito/router';
-import { Avatar, Button, Form, H4, Input, Spinner, Text, View, YStack, styled } from 'tamagui';
+import { Avatar, Form, Separator, Spacer, Text, View, YStack, styled } from 'tamagui';
 import { Header } from '../../../../components/layouts';
 
 const StyledForm = styled(Form, {
-  height: 333,
   borderWidth: 1,
   borderRadius: '$8',
   backgroundColor: '$background',
   borderColor: '$borderColor',
-  padding: '$4',
+  padding: '$3.5',
 });
 
 export function ProfileEdit() {
@@ -51,12 +50,29 @@ export function ProfileEdit() {
             </Avatar>
           </View>
           <StyledForm>
-            <H4>{status[0].toUpperCase() + status.slice(1)}</H4>
-            <Input size='$2' flex={1}></Input>
-
-            <Form.Trigger asChild disabled={status !== 'off'}>
-              <Button icon={status === 'submitting' ? () => <Spinner /> : undefined}>Submit</Button>
-            </Form.Trigger>
+            <YStack gap='$2.5'>
+              <View>
+                <Text color='$subtle'>{t('USERNAME')}</Text>
+                <Spacer size='$1' />
+                <Text>@Username</Text>
+              </View>
+              <Separator />
+              <View>
+                <Text color='$subtle'>{t('DISPLAY_NAME')}</Text>
+                <Spacer size='$1' />
+                <Text>DisplayName</Text>
+              </View>
+              <Separator />
+              <View>
+                <Text color='$subtle'>{t('SELF_INTRODUCTION')}</Text>
+                <Spacer size='$1' />
+                <Text>SelfIntroduction</Text>
+                <Text>SelfIntroduction</Text>
+                <Text>SelfIntroduction</Text>
+                <Text>SelfIntroduction</Text>
+                <Text>SelfIntroduction</Text>
+              </View>
+            </YStack>
           </StyledForm>
         </YStack>
       </YStack>

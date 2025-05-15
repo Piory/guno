@@ -1,6 +1,5 @@
 import React from 'react';
-import { H4, H5, Text, View, XStack, styled } from 'tamagui';
-
+import { Text, View, XStack, styled } from 'tamagui';
 
 const HeaderView = styled(View, {
   width: '100%',
@@ -23,14 +22,16 @@ export const Header: React.FC<Props> = ({ title, leading, action }) => {
       <HeaderView>
         <XStack flex={1} justifyContent='space-between' alignItems='center'>
           <View flex={1} alignItems='flex-start'>
-            <View>
-            {leading}
-            </View>
+            <View>{leading}</View>
           </View>
           <View alignItems='center'>
-            <Text fontSize='$7' fontWeight='bold'>{title}</Text>
+            <Text fontSize='$7' fontWeight='bold'>
+              {title}
+            </Text>
           </View>
-          <View flex={1} alignItems='flex-end'>{action}</View>
+          <View flex={1} alignItems='flex-end'>
+            {action}
+          </View>
         </XStack>
       </HeaderView>
     </>

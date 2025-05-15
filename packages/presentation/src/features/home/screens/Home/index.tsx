@@ -6,7 +6,8 @@ import { Plus } from '@tamagui/lucide-icons';
 import { Separator, Spacer, View, XStack, YStack } from 'tamagui';
 import Logo from '../../../../../assets/svgs/logo.svg';
 import { PostCard } from '../../../../components/elements/cards';
-import { CollapsibleHeader, DEFAULT_HEADER_HEIGHT } from '../../../../components/layouts';
+import { CollapsibleHeader } from '../../../../components/layouts';
+import { DEFAULT_HEADER_HEIGHT } from '../../../../configs';
 
 const AnimatedFlashList = Animated.createAnimatedComponent(FlashList);
 

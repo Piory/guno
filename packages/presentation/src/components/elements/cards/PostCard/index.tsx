@@ -35,7 +35,7 @@ export const PostCard: React.FC = () => {
             </XStack>
           </XStack>
           <YStack flex={1} gap='$2'>
-            <Text>本文本本文本文本文本文本文本文本文本本文本本文本文本文本文本文本文本文本本文本本文本文本文本文本文本文本文本本文本本文本文本文本文本文本文本文本</Text>
+            <Text lineHeight={18}>本文本本文本文本文本文本文本文本文本本文本本文本文本文本文本文本文本文本本文本本文本文本文本文本文本文本文本本文本本文本文本文本文本文本文本文本</Text>
             <XStack flex={1} gap='$4' alignItems='center'>
               <XStack flex={3} gap='$1.5' alignItems='center'>
                 <MessageSquare size={iconSize} color='$subtle' />

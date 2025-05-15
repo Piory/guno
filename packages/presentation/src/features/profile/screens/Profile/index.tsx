@@ -29,7 +29,7 @@ const Header = () => {
               </Avatar>
               <YStack justifyContent='space-between'>
                 <XStack gap='$2' alignItems='center'>
-                  <OutlinedButton height='$2.5' paddingHorizontal='$4' paddingVertical='$0' onPress={() => {}}>
+                  <OutlinedButton height='$2.5' paddingHorizontal='$4' paddingVertical='$0' onPress={() => push('/profile/edit')}>
                     <Text>{t('EDIT')}</Text>
                   </OutlinedButton>
                   <View onPress={() => push('/setting')}>
