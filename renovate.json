@@ -30,8 +30,7 @@
         "npm",
         "pnpm",
         "yarn"
-      ],
-      "automerge": false
+      ]
     },
     {
       "groupName": "Jest",
