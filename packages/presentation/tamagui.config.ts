@@ -30,9 +30,9 @@ const customTokens = createTokens({
     neutral900: '#0B0D10',
 
     // Border & subtle
-    borderLight: '#C6CCD6',
+    borderLight: '#E2E9F4',
     borderDark: '#1C2023',
-    textSubtleLight: '#6C7380',
+    textSubtleLight: '#A0A9BC',
     textSubtleDark: '#6C7380',
 
     // Semantic
