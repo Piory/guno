@@ -3,16 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "engines": {
-    "node": "22.14.0",
+    "node": "22.15.1",
     "npm": "use pnpm please!",
     "yarn": "use pnpm please!",
-    "pnpm": "10.10.0"
+    "pnpm": "10.11.0"
   },
   "volta": {
-    "node": "22.14.0",
-    "pnpm": "10.10.0"
+    "node": "22.15.1",
+    "pnpm": "10.11.0"
   },
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.11.0",
   "scripts": {
     "app": "pnpm -F \"app\"",
     "shared": "pnpm -F \"shared\"",
