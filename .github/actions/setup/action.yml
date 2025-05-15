@@ -3,14 +3,7 @@ description: Setup
 runs:
   using: composite
   steps:
-    - name: Install Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version-file: package.json
-    # corepack を有効化
-    - name: Enable corepack pnpm
-      shell: bash
-      run: corepack enable pnpm
+    - uses: volta-cli/action@v4
     # pnpm のキャッシュディレクトリを取得
     - id: pnpm
       shell: bash
