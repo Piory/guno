@@ -71,6 +71,9 @@ const config = createTamagui({
       // borderColor
       borderColor: customTokens.color.borderLight,
       subtle: customTokens.color.textSubtleLight,
+      // shimmer
+      shimmerBackground: '#F7F7F7',
+      shimmerHighlight: '#E0E0E0',
       // semantic
       success: customTokens.color.success,
       warning: customTokens.color.warning,
@@ -93,6 +96,9 @@ const config = createTamagui({
       // borderColor
       borderColor: customTokens.color.borderDark,
       subtle: customTokens.color.textSubtleDark,
+      // shimmer
+      shimmerBackground: '#14161A',
+      shimmerHighlight: '#22252C',
       // semantic
       success: customTokens.color.success,
       warning: customTokens.color.warning,

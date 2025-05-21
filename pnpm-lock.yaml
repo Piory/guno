@@ -306,12 +306,18 @@ importers:
       react-native-screens:
         specifier: 4.10.0
         version: 4.10.0(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.4)(react@19.0.0))(react@19.0.0)
+      react-native-shimmer-placeholder:
+        specifier: 2.0.9
+        version: 2.0.9(prop-types@15.8.1)(react-native-linear-gradient@2.8.3(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.4)(react@19.0.0))(react@19.0.0))
       solito:
         specifier: 4.4.1
         version: 4.4.1
       tamagui:
         specifier: 1.126.13
         version: 1.126.13(@types/react@19.1.4)(react-dom@19.0.0(react@19.0.0))(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.4)(react@19.0.0))(react@19.0.0)
+      zustand:
+        specifier: 5.0.4
+        version: 5.0.4(@types/react@19.1.4)(react@19.0.0)(use-sync-external-store@1.5.0(react@19.0.0))
     devDependencies:
       '@babel/core':
         specifier: 7.27.1
@@ -5901,6 +5907,12 @@ packages:
       react: '*'
       react-native: '*'
 
+  react-native-shimmer-placeholder@2.0.9:
+    resolution: {integrity: sha512-s2pfAAO6uaybREYM2KcaxP3c2XlZvLfHfzmhMlGEoOhSKaoM92KpA1Hx0BeC75yilkliJuowqO/hFzvLB0h7hg==}
+    peerDependencies:
+      prop-types: '>=15.6.0'
+      react-native-linear-gradient: '>=2.4.0'
+
   react-native-svg-transformer@1.5.1:
     resolution: {integrity: sha512-dFvBNR8A9VPum9KCfh+LE49YiJEF8zUSnEFciKQroR/bEOhlPoZA0SuQ0qNk7m2iZl2w59FYjdRe0pMHWMDl0Q==}
     peerDependencies:
@@ -7101,6 +7113,24 @@ packages:
 
   zod@3.24.3:
     resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
+
+  zustand@5.0.4:
+    resolution: {integrity: sha512-39VFTN5InDtMd28ZhjLyuTnlytDr9HfwO512Ai4I8ZABCoyAj4F1+sr7sD1jP/+p7k77Iko0Pb5NhgBFDCX0kQ==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
 
 snapshots:
 
@@ -14541,6 +14571,11 @@ snapshots:
       react-native: 0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.4)(react@19.0.0)
       warn-once: 0.1.1
 
+  react-native-shimmer-placeholder@2.0.9(prop-types@15.8.1)(react-native-linear-gradient@2.8.3(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.4)(react@19.0.0))(react@19.0.0)):
+    dependencies:
+      prop-types: 15.8.1
+      react-native-linear-gradient: 2.8.3(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.4)(react@19.0.0))(react@19.0.0)
+
   react-native-svg-transformer@1.5.1(react-native-svg@15.12.0(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.4)(react@19.0.0))(react@19.0.0))(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.4)(react@19.0.0))(typescript@5.8.3):
     dependencies:
       '@svgr/core': 8.1.0(typescript@5.8.3)
@@ -15931,3 +15966,9 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zod@3.24.3: {}
+
+  zustand@5.0.4(@types/react@19.1.4)(react@19.0.0)(use-sync-external-store@1.5.0(react@19.0.0)):
+    optionalDependencies:
+      '@types/react': 19.1.4
+      react: 19.0.0
+      use-sync-external-store: 1.5.0(react@19.0.0)
