@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { TabBarProps } from 'react-native-collapsible-tab-view';
 import { Settings } from '@tamagui/lucide-icons';
 import { useRouter } from 'solito/router';
 import { Spacer, Text, View, XStack, YStack } from 'tamagui';
@@ -12,7 +13,8 @@ import { useAuth } from '../../../../contexts/AuthContext';
 import { useUserStore } from '../../../../stores/userStore';
 import { SelfIntroduction } from '../../components/parts/SelfIntroduction';
 
-export const ProfileHeader = () => {
+
+export const ProfileHeader: React.FC<TabBarProps<string>> = () => {
   const { t } = useTranslation();
   const { push } = useRouter();
   const { userId } = useAuth();

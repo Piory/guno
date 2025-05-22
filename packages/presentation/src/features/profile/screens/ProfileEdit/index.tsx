@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'solito/router';
-import { Avatar, Form, Separator, Spacer, Text, View, YStack, styled } from 'tamagui';
+import { Form, Separator, Spacer, Text, View, YStack, styled } from 'tamagui';
+import { UserAvatar } from '../../../../components/elements/avatars/UserAvatar';
+import { ShimmerRectangle } from '../../../../components/elements/loadings/Shimmer';
 import { Header } from '../../../../components/layouts/headers/Header';
+import { useAuth } from '../../../../contexts/AuthContext';
+import { useUserStore } from '../../../../stores/userStore';
 
-const StyledForm = styled(Form, {
-  borderWidth: 1,
-  borderRadius: '$8',
-  backgroundColor: '$background',
-  borderColor: '$borderColor',
-  padding: '$3.5',
-});
-
-export function ProfileEdit() {
-  const { back } = useRouter();
+export const ProfileEdit: React.FC = () => {
   const { t } = useTranslation();
+  const { back } = useRouter();
+  const { userId } = useAuth();
+  const vUserDetail = useUserStore(state => (userId ? state.userMap[userId]?.data?.vUserDetail : undefined));
   const [status, setStatus] = useState<'off' | 'submitting' | 'submitted'>('off');
 
   useEffect(() => {
@@ -44,33 +42,32 @@ export function ProfileEdit() {
         />
         <YStack flex={1} justifyContent='unset' paddingHorizontal='$4' paddingVertical='$8' gap='$4'>
           <View alignItems='center' justifyContent='center'>
-            <Avatar circular size='$10'>
-              <Avatar.Image src='https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80' />
-              <Avatar.Fallback backgroundColor='white' />
-            </Avatar>
+            <UserAvatar size='$10' avatarUrl={vUserDetail?.avatar_url ?? undefined} isLoading={!vUserDetail} />
           </View>
           <StyledForm>
             <YStack gap='$2.5'>
               <View>
                 <Text color='$subtle'>{t('USERNAME')}</Text>
                 <Spacer size='$1' />
-                <Text>@Username</Text>
+                <ShimmerRectangle visible={!!vUserDetail}>
+                  <Text>{vUserDetail ? `@${vUserDetail.screen_name}` : null}</Text>
+                </ShimmerRectangle>
               </View>
               <Separator />
               <View>
                 <Text color='$subtle'>{t('DISPLAY_NAME')}</Text>
                 <Spacer size='$1' />
-                <Text>DisplayName</Text>
+                <ShimmerRectangle visible={!!vUserDetail}>
+                  <Text>{vUserDetail?.display_name}</Text>
+                </ShimmerRectangle>
               </View>
               <Separator />
               <View>
                 <Text color='$subtle'>{t('SELF_INTRODUCTION')}</Text>
                 <Spacer size='$1' />
-                <Text>SelfIntroduction</Text>
-                <Text>SelfIntroduction</Text>
-                <Text>SelfIntroduction</Text>
-                <Text>SelfIntroduction</Text>
-                <Text>SelfIntroduction</Text>
+                <ShimmerRectangle visible={!!vUserDetail}>
+                  <Text>{vUserDetail?.self_introduction}</Text>
+                </ShimmerRectangle>
               </View>
             </YStack>
           </StyledForm>
@@ -78,4 +75,12 @@ export function ProfileEdit() {
       </YStack>
     </>
   );
-}
+};
+
+const StyledForm = styled(Form, {
+  borderWidth: 1,
+  borderRadius: '$8',
+  backgroundColor: '$background',
+  borderColor: '$borderColor',
+  padding: '$3.5',
+});

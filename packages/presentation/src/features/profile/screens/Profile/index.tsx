@@ -91,7 +91,7 @@ export const Profile: React.FC = () => {
         onIndexChange={onIndexChange}
         containerStyle={{ top }}
         headerContainerStyle={styles.headerContainer}
-        renderHeader={ProfileHeader}
+        renderHeader={props => <ProfileHeader {...props} />}
         renderTabBar={props => <TabBar offset={tabUnderlineOffset} {...props} />}
         allowHeaderOverscroll
       >

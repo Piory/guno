@@ -31,7 +31,6 @@ export const useUserStore = create<State & Action>(set => {
           userMap: { ...state.userMap, [userId]: { isInitialized: false, isLoading: true, data: undefined } },
         }));
         const suiteUser = await findSuiteUserUseCase.execute(userId);
-        console.log(suiteUser);
         if (suiteUser) {
           set(state => ({
             ...state,
