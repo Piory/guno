@@ -15,7 +15,7 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
-jest.mock('../../../../../../contexts', () => {
+jest.mock('../../../../../../contexts/AuthContext', () => {
   // モックファクトリ内で直接作る
   const mockSignIn = jest.fn();
   return {
@@ -27,7 +27,7 @@ jest.mock('../../../../../../contexts', () => {
   };
 });
 
-const mockSignIn = require('../../../../../../contexts').mockSignIn;
+const mockSignIn = require('../../../../../../contexts/AuthContext').mockSignIn;
 
 describe('<SignInWithGuestButton />', () => {
   const setup = () => {

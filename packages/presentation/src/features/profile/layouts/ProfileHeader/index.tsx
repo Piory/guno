@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Settings } from '@tamagui/lucide-icons';
 import { useRouter } from 'solito/router';
 import { Spacer, Text, View, XStack, YStack } from 'tamagui';
-import { UserAvatar } from '../../../../components/elements/avatars';
-import { OutlinedButton } from '../../../../components/elements/buttons';
-import { ShimmerRectangle } from '../../../../components/elements/loadings';
-import { DisplayName, ScreenName } from '../../../../components/elements/texts';
-import { useAuth } from '../../../../contexts';
-import { useUserStore } from '../../../../stores';
+import { UserAvatar } from '../../../../components/elements/avatars/UserAvatar';
+import { OutlinedButton } from '../../../../components/elements/buttons/OutlinedButton';
+import { ShimmerRectangle } from '../../../../components/elements/loadings/Shimmer';
+import { DisplayName } from '../../../../components/elements/texts/DisplayName';
+import { ScreenName } from '../../../../components/elements/texts/ScreenName';
+import { useAuth } from '../../../../contexts/AuthContext';
+import { useUserStore } from '../../../../stores/userStore';
 import { SelfIntroduction } from '../../components/parts/SelfIntroduction';
 
 export const ProfileHeader = () => {

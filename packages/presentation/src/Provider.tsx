@@ -1,7 +1,8 @@
 import React, { PropsWithChildren } from 'react';
 import { TamaguiProvider } from 'tamagui';
 import config from '../tamagui.config.ts';
-import { AuthProvider, UseCaseProvider } from './contexts';
+import { AuthProvider } from './contexts/AuthContext';
+import { UseCaseProvider } from './contexts/UseCaseContext';
 import './locales/config/index.ts';
 import { Theme } from './types/theme';
 

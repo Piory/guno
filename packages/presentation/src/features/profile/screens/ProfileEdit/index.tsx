@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'solito/router';
 import { Avatar, Form, Separator, Spacer, Text, View, YStack, styled } from 'tamagui';
-import { Header } from '../../../../components/layouts';
+import { Header } from '../../../../components/layouts/headers/Header';
 
 const StyledForm = styled(Form, {
   borderWidth: 1,

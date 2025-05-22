@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AlertDialog, Button, Paragraph } from 'tamagui';
-import { OutlinedButton } from '../../../../../../components/elements/buttons';
-import { useAuth } from '../../../../../../contexts';
+import { OutlinedButton } from '../../../../../../components/elements/buttons/OutlinedButton';
+import { useAuth } from '../../../../../../contexts/AuthContext';
 
 export function SignInWithGuestButton(): React.JSX.Element {
   const { t } = useTranslation();

@@ -1,8 +1,8 @@
 import React, { ReactNode, useState } from 'react';
 import { Button, Paragraph, Spacer, View, XStack, styled } from 'tamagui';
 import { AuthProviderType } from '@core/domain';
-import { LoadingDialog } from '../../../../../../components/elements/loadings';
-import { useAuth } from '../../../../../../contexts';
+import { LoadingDialog } from '../../../../../../components/elements/loadings/LoadingDialog';
+import { useAuth } from '../../../../../../contexts/AuthContext';
 
 type Props = {
   type: AuthProviderType;

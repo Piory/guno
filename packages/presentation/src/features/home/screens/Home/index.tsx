@@ -5,8 +5,8 @@ import { FlashList } from '@shopify/flash-list';
 import { Plus } from '@tamagui/lucide-icons';
 import { Separator, Spacer, View, XStack, YStack } from 'tamagui';
 import Logo from '../../../../../assets/svgs/logo.svg';
-import { PostCard } from '../../../../components/elements/cards';
-import { CollapsibleHeader } from '../../../../components/layouts';
+import { PostCard } from '../../../../components/elements/cards/PostCard';
+import { CollapsibleHeader } from '../../../../components/layouts/headers/CollapsibleHeader';
 import { DEFAULT_HEADER_HEIGHT } from '../../../../configs';
 
 const AnimatedFlashList = Animated.createAnimatedComponent(FlashList);

@@ -6,7 +6,7 @@ import { LinearGradient } from 'react-native-linear-gradient';
 import Animated, { SharedValue, interpolateColor, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Separator, Spacer, Text, View, XStack, YStack, useTheme, useWindowDimensions } from 'tamagui';
-import { PostCard } from '../../../../components/elements/cards';
+import { PostCard } from '../../../../components/elements/cards/PostCard';
 import { ProfileHeader } from '../../layouts/ProfileHeader';
 
 const DATA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];

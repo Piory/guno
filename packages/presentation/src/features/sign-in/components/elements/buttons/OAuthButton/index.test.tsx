@@ -4,7 +4,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import { TamaguiProvider, createTamagui } from 'tamagui';
 import { OAuthButton } from './index.tsx';
 
-jest.mock('../../../../../../contexts', () => {
+jest.mock('../../../../../../contexts/AuthContext', () => {
   // モックファクトリ内で直接作る
   const mockSignIn = jest.fn();
   return {
@@ -16,7 +16,7 @@ jest.mock('../../../../../../contexts', () => {
   };
 });
 
-const mockSignIn = require('../../../../../../contexts').mockSignIn;
+const mockSignIn = require('../../../../../../contexts/AuthContext').mockSignIn;
 
 describe('<OAuthButton />', () => {
   const config = createTamagui(defaultConfig);

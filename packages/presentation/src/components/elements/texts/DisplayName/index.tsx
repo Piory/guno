@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'tamagui';
-import { ShimmerRectangle } from '../../loadings';
+import { ShimmerRectangle } from '../../loadings/Shimmer';
 
 type Props = {
   fontSize: string;

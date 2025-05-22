@@ -4,7 +4,10 @@ import { Separator, Spacer, Text, XStack, YStack, useTheme } from 'tamagui';
 import { AppConfig } from '@core/shared';
 import Logo from '../../../../../assets/svgs/logo.svg';
 import Name from '../../../../../assets/svgs/name.svg';
-import { SignInWithAppleButton, SignInWithGoogleButton, SignInWithGuestButton } from '../../components/elements/buttons';
+import { SignInWithAppleButton } from '../../components/elements/buttons/SignInWithAppleButton';
+import { SignInWithGoogleButton } from '../../components/elements/buttons/SignInWithGoogleButton';
+import { SignInWithGuestButton } from '../../components/elements/buttons/SignInWithGuestButton';
+
 
 export const SignIn: React.FC = () => {
   const { t } = useTranslation();
