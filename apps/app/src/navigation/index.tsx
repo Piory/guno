@@ -4,13 +4,14 @@ import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, useTheme } from 'tamagui';
 import { AppConfig } from '@core/shared';
-import { ProfileEdit, Setting, SignIn, Theme, useAuth } from '@core/presentation';
+import { EditScreenName, ProfileEdit, Setting, SignIn, Theme, useAuth } from '@core/presentation';
 import { BottomTabs } from './BottomTabs';
 
 const Stack = createNativeStackNavigator<{
   SignIn: undefined;
   SignedIn: undefined;
   ProfileEdit: undefined;
+  EditScreenName: undefined;
   Setting: undefined;
   NotFound: undefined;
 }>();
@@ -21,7 +22,7 @@ type Props = {
 
 export const Navigation: React.FC<Props> = ({ theme }) => {
   const { userId } = useAuth();
-  const { background, subtle, secondary } = useTheme();
+  const { background, subtle, primary } = useTheme();
   const navigationTheme = theme === 'dark' ? DarkTheme : DefaultTheme;
   const navTheme = {
     ...navigationTheme,
@@ -29,7 +30,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
       ...navigationTheme.colors,
       background: background?.val,
       text: subtle?.val,
-      primary: secondary?.val,
+      primary: primary?.val,
       // card: theme.background?.get(),
       border: background?.val,
       // notification: theme.notification?.get(),
@@ -52,6 +53,7 @@ export const Navigation: React.FC<Props> = ({ theme }) => {
                 },
               },
               ProfileEdit: 'profile/edit',
+              EditScreenName: 'profile/edit/screen-name',
               Setting: 'setting',
               NotFound: '*',
             },
@@ -90,6 +92,7 @@ const SignedInStack = () => {
       <Stack.Screen name='SignedIn' component={BottomTabs} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name='ProfileEdit' component={ProfileEdit} />
+        <Stack.Screen name='EditScreenName' component={EditScreenName} />
         <Stack.Screen name='Setting' component={Setting} />
       </Stack.Group>
     </>

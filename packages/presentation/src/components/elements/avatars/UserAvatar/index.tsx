@@ -4,18 +4,18 @@ import { Avatar, getTokenValue } from 'tamagui';
 import { ShimmerCircle } from '../../loadings/Shimmer';
 
 type Props = {
-  size: GetTokenString<keyof Tokens['size']>;
-  avatarUrl: string | undefined;
+  size: GetTokenString<keyof Tokens['size']> | number;
+  avatarUrl: string | null | undefined;
   isLoading: boolean;
 };
 
 export const UserAvatar: React.FC<Props> = ({ size, avatarUrl, isLoading }) => {
-  const avatarSize = getTokenValue(size);
+  const avatarSize = typeof size === 'string' ? getTokenValue(size) : size;
   return (
     <>
       <ShimmerCircle width={avatarSize} height={avatarSize} visible={!isLoading}>
         <Avatar circular size={avatarSize}>
-          <Avatar.Image src={avatarUrl} />
+          <Avatar.Image src={avatarUrl ?? undefined} />
           <Avatar.Fallback backgroundColor='white' />
         </Avatar>
       </ShimmerCircle>

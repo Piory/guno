@@ -18,9 +18,5 @@ const StyledButton = styled(Button, {
 type Props = React.PropsWithChildren<React.ComponentProps<typeof Button>>;
 
 export const OutlinedButton: React.FC<Props> = ({ children, ...props }) => {
-  return (
-    <StyledButton {...props}>
-      {children}
-    </StyledButton>
-  );
+  return <StyledButton {...props}>{children}</StyledButton>;
 };

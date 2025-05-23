@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StyleSheet } from 'react-native';
 import { TabBarProps, Tabs } from 'react-native-collapsible-tab-view';
@@ -7,6 +7,8 @@ import Animated, { SharedValue, interpolateColor, useAnimatedStyle, useSharedVal
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Separator, Spacer, Text, View, XStack, YStack, useTheme, useWindowDimensions } from 'tamagui';
 import { PostCard } from '../../../../components/elements/cards/PostCard';
+import { useAuth } from '../../../../contexts/AuthContext';
+import { useUserStore } from '../../../../stores/userStore';
 import { ProfileHeader } from '../../layouts/ProfileHeader';
 
 const DATA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -46,7 +48,7 @@ const TabBar: React.FC<TabBarProps<string> & { offset: SharedValue<number> }> = 
       </XStack>
       <Animated.View style={[styles.tabBarUnderlineContainer, animatedUnderline]}>
         <YStack flex={1} width='100%' justifyContent='flex-end' alignItems='center'>
-          <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} locations={[0.25, 0.5, 0.75]} colors={[secondary?.val, primary?.val, accent?.val]} style={styles.tabBarUnderline} />
+          <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} locations={[0.25, 0.5, 0.75]} colors={[primary?.val, secondary?.val, accent?.val]} style={styles.tabBarUnderline} />
         </YStack>
       </Animated.View>
     </View>
@@ -54,9 +56,18 @@ const TabBar: React.FC<TabBarProps<string> & { offset: SharedValue<number> }> = 
 };
 
 export const Profile: React.FC = () => {
-  const { width } = useWindowDimensions();
-  const tabUnderlineOffset = useSharedValue(0);
   const { top } = useSafeAreaInsets();
+  const tabUnderlineOffset = useSharedValue(0);
+  const { width } = useWindowDimensions();
+  const { userId } = useAuth();
+  const fetchUser = useUserStore(state => state.fetchUser);
+  const data = useUserStore(state => (userId ? state.userMap[userId] : undefined));
+  useEffect(() => {
+    if (userId) {
+      fetchUser(userId);
+    }
+  }, [userId]);
+
   const renderItem = useCallback(({}) => {
     return <PostCard />;
   }, []);
@@ -91,7 +102,7 @@ export const Profile: React.FC = () => {
         onIndexChange={onIndexChange}
         containerStyle={{ top }}
         headerContainerStyle={styles.headerContainer}
-        renderHeader={props => <ProfileHeader {...props} />}
+        renderHeader={props => <ProfileHeader suiteUser={data?.data} isLoading={data?.isLoading ?? true} {...props} />}
         renderTabBar={props => <TabBar offset={tabUnderlineOffset} {...props} />}
         allowHeaderOverscroll
       >

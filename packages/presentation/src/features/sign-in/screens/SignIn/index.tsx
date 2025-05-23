@@ -8,7 +8,6 @@ import { SignInWithAppleButton } from '../../components/elements/buttons/SignInW
 import { SignInWithGoogleButton } from '../../components/elements/buttons/SignInWithGoogleButton';
 import { SignInWithGuestButton } from '../../components/elements/buttons/SignInWithGuestButton';
 
-
 export const SignIn: React.FC = () => {
   const { t } = useTranslation();
   const { subtle } = useTheme();

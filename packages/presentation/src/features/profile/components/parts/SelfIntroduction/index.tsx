@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from 'tamagui';
 
 type Props = {
-  text: string | undefined;
+  text: string | null | undefined;
 };
 
 export const SelfIntroduction: React.FC<Props> = ({ text }) => {

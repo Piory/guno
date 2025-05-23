@@ -1,40 +1,33 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TabBarProps } from 'react-native-collapsible-tab-view';
 import { Settings } from '@tamagui/lucide-icons';
 import { useRouter } from 'solito/router';
 import { Spacer, Text, View, XStack, YStack } from 'tamagui';
+import { SuiteUser } from '@core/domain';
 import { UserAvatar } from '../../../../components/elements/avatars/UserAvatar';
 import { OutlinedButton } from '../../../../components/elements/buttons/OutlinedButton';
 import { ShimmerRectangle } from '../../../../components/elements/loadings/Shimmer';
 import { DisplayName } from '../../../../components/elements/texts/DisplayName';
 import { ScreenName } from '../../../../components/elements/texts/ScreenName';
-import { useAuth } from '../../../../contexts/AuthContext';
-import { useUserStore } from '../../../../stores/userStore';
 import { SelfIntroduction } from '../../components/parts/SelfIntroduction';
 
+type Props = {
+  suiteUser: SuiteUser | undefined;
+  isLoading: boolean;
+} & TabBarProps<string>;
 
-export const ProfileHeader: React.FC<TabBarProps<string>> = () => {
+export const ProfileHeader: React.FC<Props> = ({ isLoading, suiteUser }) => {
   const { t } = useTranslation();
   const { push } = useRouter();
-  const { userId } = useAuth();
-  const entry = useUserStore(state => (userId ? state.userMap[userId] : undefined));
-  const fetchUser = useUserStore(state => state.fetchUser);
-
-  useEffect(() => {
-    if (userId) {
-      fetchUser(userId);
-    }
-  }, [userId]);
-  const isLoading = entry ? entry.isLoading : true;
-  const vUserDetail = entry?.isLoading ? undefined : entry?.data?.vUserDetail;
+  const vUserDetail = suiteUser?.vUserDetail;
   return (
     <>
       <View backgroundColor='$background' paddingTop='$4' paddingBottom='$2' paddingHorizontal='$4'>
         <YStack flex={1} gap='$3'>
           <YStack>
             <XStack justifyContent='space-between'>
-              <UserAvatar size='$6' avatarUrl={vUserDetail?.avatar_url ?? undefined} isLoading={isLoading} />
+              <UserAvatar size='$6' avatarUrl={vUserDetail?.avatar_url} isLoading={isLoading} />
               <YStack justifyContent='space-between'>
                 {isLoading ? undefined : (
                   <XStack gap='$2' alignItems='center'>
@@ -68,11 +61,11 @@ export const ProfileHeader: React.FC<TabBarProps<string>> = () => {
               return (
                 <YStack flex={1} gap='$3'>
                   <YStack gap='$1'>
-                    <DisplayName fontSize='$6' text={entry?.data?.vUserDetail.display_name ?? undefined} />
-                    <ScreenName fontSize='$5' text={entry?.data?.vUserDetail.screen_name ?? undefined} />
+                    <DisplayName fontSize='$6' text={vUserDetail?.display_name} />
+                    <ScreenName fontSize='$5' text={vUserDetail?.screen_name} />
                   </YStack>
                   <YStack gap='$3'>
-                    <SelfIntroduction text={undefined} />
+                    <SelfIntroduction text={vUserDetail?.self_introduction} />
                     <XStack gap='$3'>
                       <XStack gap='$1.5'>
                         <Text fontSize='$3.5' color='$color'>

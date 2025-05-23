@@ -10,7 +10,7 @@ export const LoadingDialog: React.FC<Props> = ({ visible }) => {
     <>
       <Dialog open={visible}>
         <Dialog.Portal>
-          <Dialog.Overlay key='overlay' backgroundColor='transparent'/>
+          <Dialog.Overlay key='overlay' backgroundColor='transparent' />
           <Dialog.Content key='content'>
             <Spinner />
           </Dialog.Content>

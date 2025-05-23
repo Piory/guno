@@ -9,16 +9,16 @@ const customTokens = createTokens({
   radius: tokens.radius,
   color: {
     // Primary
-    primary: '#91A3FF',
-    primary300: '#B9C4FF',
-    primary700: '#6475D1',
+    primary: '#A95AFF',
+    primary300: '#CBA2FF',
+    primary700: '#8138E4',
 
-    // Secondary (violet)
-    secondary: '#A95AFF',
-    secondary300: '#CBA2FF',
-    secondary700: '#8138E4',
+    // Secondary
+    secondary: '#91A3FF',
+    secondary300: '#B9C4FF',
+    secondary700: '#6475D1',
 
-    // Accent (cyan)
+    // Accent
     accent: '#47D8DC',
     accent300: '#80E7EA',
     accent700: '#1AA9AC',
@@ -74,6 +74,8 @@ const config = createTamagui({
       // shimmer
       shimmerBackground: '#F7F7F7',
       shimmerHighlight: '#E0E0E0',
+      // overlay
+      overlayBackground: 'rgba(0, 0, 0, 0.1)',
       // semantic
       success: customTokens.color.success,
       warning: customTokens.color.warning,
@@ -99,6 +101,8 @@ const config = createTamagui({
       // shimmer
       shimmerBackground: '#14161A',
       shimmerHighlight: '#22252C',
+      // overlay
+      overlayBackground: 'rgba(255, 255, 255, 0.1)',
       // semantic
       success: customTokens.color.success,
       warning: customTokens.color.warning,
