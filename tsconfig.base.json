@@ -8,22 +8,22 @@
     "emitDecoratorMetadata": true,
     "paths": {
       "@app/*": [
-        "packages/apps/app/src/*"
+        "apps/app/src/*"
       ],
       "@core/shared/*": [
-        "packages/core/shared/src/*"
+        "packages/shared/src/*"
       ],
       "@core/infrastructure/*": [
-        "packages/core/infrastructure/src/*"
+        "packages/infrastructure/src/*"
       ],
       "@core/presentation/*": [
-        "packages/core/presentation/src/*"
+        "packages/presentation/src/*"
       ],
       "@core/usecase/*": [
-        "packages/core/usecase/src/*"
+        "packages/usecase/src/*"
       ],
       "@core/domain/*": [
-        "packages/core/domain/src/*"
+        "packages/domain/src/*"
       ]
     }
   }
