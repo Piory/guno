@@ -6,7 +6,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "react-native-app-auth": "8.0.2",
+    "react-native-app-auth": "8.0.3",
     "react-native-config": "1.5.5"
   }
 }
