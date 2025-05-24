@@ -123,8 +123,8 @@ importers:
         specifier: 0.79.2
         version: 0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.0.0)
       react-native-app-auth:
-        specifier: 8.0.2
-        version: 8.0.2(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.0.0))
+        specifier: 8.0.3
+        version: 8.0.3(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.0.0))
       react-native-bootsplash:
         specifier: 6.3.8
         version: 6.3.8(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.0.0))(react@19.0.0)
@@ -238,8 +238,8 @@ importers:
         specifier: 2.49.8
         version: 2.49.8
       react-native-app-auth:
-        specifier: 8.0.2
-        version: 8.0.2(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.1.0))
+        specifier: 8.0.3
+        version: 8.0.3(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.1.0))
 
   packages/presentation:
     dependencies:
@@ -368,8 +368,8 @@ importers:
   packages/shared:
     dependencies:
       react-native-app-auth:
-        specifier: 8.0.2
-        version: 8.0.2(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.1.0))
+        specifier: 8.0.3
+        version: 8.0.3(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.1.0))
       react-native-config:
         specifier: 1.5.5
         version: 1.5.5
@@ -5843,8 +5843,8 @@ packages:
   react-is@19.1.0:
     resolution: {integrity: sha512-Oe56aUPnkHyyDxxkvqtd7KkdQP5uIUfHxd5XTb3wE9d/kRnZLmKbDB0GWk919tdQ+mxxPtG6EAs6RMT6i1qtHg==}
 
-  react-native-app-auth@8.0.2:
-    resolution: {integrity: sha512-HV7lJ8l9hJS908cg3nXcqaWRMiinOh0tifynBUVX7RnsColeZHi44jpx7ElRWBliUQlpRqsZoONNflM2EpVLOQ==}
+  react-native-app-auth@8.0.3:
+    resolution: {integrity: sha512-x5OhxjlMDRcHRYVWAGh7u+ExQ/fTGBn3tMoHDopez/GPMSgcEqzvsSDrtM85DlG+eL79lSQSJ+X/wt/DPiUZKg==}
     peerDependencies:
       react-native: '>=0.63.0'
 
@@ -14505,13 +14505,13 @@ snapshots:
 
   react-is@19.1.0: {}
 
-  react-native-app-auth@8.0.2(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.0.0)):
+  react-native-app-auth@8.0.3(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.0.0)):
     dependencies:
       invariant: 2.2.4
       react-native: 0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.0.0)
       react-native-base64: 0.0.2
 
-  react-native-app-auth@8.0.2(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.1.0)):
+  react-native-app-auth@8.0.3(react-native@0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.1.0)):
     dependencies:
       invariant: 2.2.4
       react-native: 0.79.2(@babel/core@7.27.1)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@19.1.5)(react@19.1.0)
